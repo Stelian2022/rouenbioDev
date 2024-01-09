@@ -1,0 +1,275 @@
+/* Styles de base pour la section des articles */
+#articles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 900;
+  margin: 20px;
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+.popup .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #999;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.popup .close-button:hover {
+  color: #333;
+}
+
+.popup h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.popup p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.newArticles {
+  padding: 20px;
+
+  background-color: #f5f5f5;
+}
+
+.newArticles h1 {
+  font-family: "montserrat", sans-serif;
+  color: #333;
+  text-align: center;
+  font-size: 34px;
+}
+
+/* Styles pour le compteur d'articles */
+.article-count {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Styles pour la div contenant les cartes d'articles */
+#prodLocaux {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+}
+
+/* Styles pour les cartes d'articles */
+.article {
+  width: calc(
+    25% - 20px
+  ); /* Largeur de chaque carte pour 
+    occuper 25% de l'espace avec une marge de 20px entre les cartes */
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+/* Styles pour le bouton "Voir plus" */
+.article .voir-plus {
+  display: inline-block;
+  background-color: green;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.popup image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 10px;
+}
+
+.article .voir-plus:hover {
+  background-color: darkgreen;
+}
+
+/* Styles pour l'image de la carte */
+.article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 10px;
+}
+.popup img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 10px;
+}
+
+/* Styles pour le titre de la carte */
+.article figcaption {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Styles pour le prix de la carte */
+.article .codepostal {
+  font-size: 15px;
+  color: #555555;
+  margin-bottom: 10px;
+}
+
+/* Styles pour la description de la carte */
+.article p {
+  font-size: 17px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* Styles pour le bouton d'achat */
+.article .btn {
+  background-color: green;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.article {
+  background-color: white;
+}
+
+/* Effet de survol pour les cartes */
+.article:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+/* css pour les pages produits */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.card .film.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card img{
+  width: 50%;
+}
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  margin-bottom: 8px;
+}
+
+.card-origin {
+  margin-bottom: 8px;
+}
+
+.card-price {
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .popup {
+    height: 800px;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    width: calc(33% - 16px);
+  }
+}
+
+@media (min-width: 1100px) {
+  .card {
+    width: calc(25% - 16px);
+  }
+}
+@media (min-width: 1500px) {
+  .card {
+    width: calc(20% - 16px);
+  }
+}
+/* CSS pour les écrans de petite taille */
+/* ==================================== */
+@media (max-width: 768px) {
+  .card-container {
+ column-gap: 0;
+  }
+
+  /* css pour les cards produits */
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  
+   
+  }
+.card{
+  width: 45%;
+}
+  .card-title {
+    font-size: .7em;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: black!important;
+  }
+
+  .card-description {
+    margin-bottom: 8px;
+    font-size: .6;
+  }
+
+  .card-origin {
+    margin-bottom: 8px;
+  }
+
+  .card-price {
+    font-weight: bold;
+  }
+  /* Affichage en une seule colonne avec 100% de largeur */
+  .article {
+    width: 100%;
+  }
+  .newArticles h1 {
+    font-size: 24px;
+  }
+  .popup {
+    width: 80%;
+  }
+  .popup p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}

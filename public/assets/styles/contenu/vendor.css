@@ -1,0 +1,123 @@
+/* Header */
+.socialH i {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Main Section */
+#ecriture .image {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Category Section */
+.category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 2rem;
+}
+
+.cat {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Contact Section */
+section.two-columns div,
+section.three-columns div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Footer */
+footer {
+  -webkit-box-shadow: 0px 0px 0px #bbb;
+  -moz-box-shadow: 0px 0px 0px #bbb;
+  box-shadow: 0px 0px 0px #bbb;
+}
+
+/* Bande Info Section */
+#bande {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#mainSection {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.phraseRouenBio {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(249, 249, 249, 0.8);
+  margin-right: 10px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.phraseRouenBio h2 {
+  color: black !important;
+  font-size: 0.8em;
+  text-align: center;
+  font-family: "courgette", sans-serif!important;
+}
+.phraseRouenBio p {
+  font-family: "courgette", sans-serif!important;
+}
+.phraseRouenBio img{
+  width: 20%;
+
+}
+/* Vendor Prefixes for Flexbox */
+
+/* Category Section */
+@supports (display: -webkit-box) or (display: -ms-flexbox) or (display: flex) {
+  .category {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+/* Contact Section */
+@supports (display: -webkit-box) or (display: -ms-flexbox) or (display: flex) {
+  section.two-columns div,
+  section.three-columns div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+/* Bande Info Section */
+@supports (display: -webkit-box) or (display: -ms-flexbox) or (display: flex) {
+  #bande {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+@media (min-width: 768px) {
+  #mainSection {
+    display: flex;
+    flex-direction: row;
+  }
+  .category {
+    width: 70%;
+  }
+  .phraseRouenBio {
+    margin-left: 0;
+    width: 25%;
+  }
+  .phraseRouenBio h2 {
+    padding-top: 10%;
+    font-size: 1em;
+  
+  }
+}

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Nos Produits Bio', 'link': '/produits/nos-produits-bio' }
+] %}
+{% block content %}
+	<div class="newPage">
+		<h1>Produits
+			{{currentPage}}
+			Bio</h1>
+	</div>
+	{{ render(controller('App\\Controller\\SearchController::search', { 'request': app.request })) }}
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+				<p>
+					Un large choix de produits d’entretien et pour la maison vous est proposé !</p>
+				<p>
+					Profitez aussi de notre rayon vrac pour votre lessive, votre liquide vaisselle ou encore vos tablettes WC de la marque Etamine du Lys.</p>
+				<p>
+					Nos marques : Ecodoo, Etamine du Lys, Naturopera, La droguerie écologique…</p>
+			</div>
+			<div class="image">
+				<img src="{{ asset('assets/img/entretien.jpg') }}" alt="Maison et entretien RouenBio">
+			</div>
+		</div>
+	</div>
+	<div id="clause">
+		<p class="attention">* Veuillez contacter le magasin pour vérifier la disponibilité des produits en stock.
+		</p>
+		<p class="attention">* Le magasin se réserve le droit de modifier les prix à tout moment.
+		</p>
+	</div>
+	{{ knp_pagination_render(maison) }}
+	<div class="card-container">
+		{% for produit in maison %}
+			<div class="card">
+				<div class="film img">
+					<img src={{ asset('assets/img/imageProduits/LogoBiomonde.png') }} alt="{{ produit.nomProduit }}" class="img-fluid" style="max-width: 100%; max-height: 100%;">
+				</div>
+				<h2 class="card-title">{{ produit.nomProduit }}</h2>
+				<p class="card-description">{{ produit.description }}</p>
+				<p class="card-origin">Origine:
+					{{ produit.origine }}</p>
+				<p class="card-price">Prix:
+					{{ produit.prVenteTTC }}
+					€</p>
+				<a href="{{ path('produit.detail', {'id': produit.id}) }}" class="button">Afficher</a>
+			</div>
+		{% endfor %}
+	</div>
+	{{ knp_pagination_render(maison) }}
+{% endblock %}

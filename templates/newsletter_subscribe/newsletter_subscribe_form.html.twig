@@ -1,0 +1,6 @@
+{# newsletter_subscribe_form.html.twig #}
+
+<form action="{{ path('newsletter_subscrib') }}" method="post">
+    <input type="email" name="email" id="email" class="newsletter-input" placeholder="Votre adresse e-mail" required>
+    <button type="submit" class="btn btn-primary">S'abonner</button>
+</form>

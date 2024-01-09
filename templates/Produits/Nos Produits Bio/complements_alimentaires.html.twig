@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Nos Produits Bio', 'link': '/produits/nos-produits-bio' }
+] %}
+{% block content %}
+
+	<div class="newPage">
+		<h1>{{currentPage}}
+			Bio</h1>
+	</div>
+	{{ render(controller('App\\Controller\\SearchController::search', { 'request': app.request })) }}
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+				<p>
+					Découvrez notre sélection de produits complémentaires alimentaires soigneusement choisis pour soutenir votre bien-être et votre santé naturellement. Chez RouenBio, nous croyons en l'importance d'une approche holistique pour nourrir votre corps et votre</p>
+
+				<p>Nos produits complémentaires alimentaires sont formulés avec des ingrédients de qualité supérieure, provenant de sources naturelles et biologiques. Ils sont conçus pour apporter des nutriments essentiels, des vitamines, des minéraux et des antioxydants bénéfiques à votre corps.</p>
+
+				<p>Que vous cherchiez à renforcer votre système immunitaire, à améliorer votre digestion, à augmenter votre énergie ou à soutenir votre bien-être général, notre équipe d'experts en nutrition est là pour vous guider. Nous vous offrons des conseils personnalisés et des recommandations basées sur vos besoins individuels.</p>
+
+				<p>Chez RouenBio, nous valorisons la transparence et la qualité. Tous nos produits complémentaires alimentaires sont rigoureusement testés pour assurer leur pureté, leur efficacité et leur conformité aux normes les plus élevées de l'industrie.</p>
+
+				<p>Nourrissez votre corps de l'intérieur avec nos produits complémentaires alimentaires, et découvrez les bienfaits d'une approche naturelle et équilibrée pour votre santé. Visitez notre magasin bio aujourd'hui et laissez-nous vous accompagner dans votre parcours vers une vie saine et épanouissante.</p>
+			</div>
+			<div class="image">
+				<img src="{{ asset('assets/img/complements.jpg') }}" alt="Complements alimentaires RouenBio">
+			</div>
+		</div>
+	</div>
+	<div id="clause">
+		<p class="attention">* Veuillez contacter le magasin pour vérifier la disponibilité des produits en stock.
+		</p>
+		<p class="attention">* Le magasin se réserve le droit de modifier les prix à tout moment.
+		</p>
+	</div>
+	{{ knp_pagination_render(bienEtre) }}
+	<div class="card-container">
+		{% for produit in bienEtre %}
+			<div class="card">
+				<div class="film img">
+					<img src={{ asset('assets/img/imageProduits/LogoBiomonde.png') }} alt="{{ produit.nomProduit }}" class="img-fluid" style="max-width: 100%; max-height: 100%;">
+				</div>
+				<h2 class="card-title">{{ produit.nomProduit }}</h2>
+				<p class="card-description">{{ produit.description }}</p>
+				<p class="card-origin">Origine:
+					{{ produit.origine }}</p>
+				<p class="card-price">Prix:
+					{{ produit.prVenteTTC }}
+					€</p>
+				<a href="{{ path('produit.detail', {'id': produit.id}) }}" class="button">Afficher</a>
+			</div>
+		{% endfor %}
+	</div>
+	{{ knp_pagination_render(bienEtre) }}
+{% endblock %}

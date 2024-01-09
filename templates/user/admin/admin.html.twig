@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Deconnexion', 'link': '/logout' }
+] %}
+
+
+{% block content %}
+
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+
+	<a href="{{ path('admin_clients') }}" class="button">Les clients RouenBio</a>
+	<a href="{{ path('app_produits_index') }}" class="button">Les Produits RouenBio</a>
+	<a href="{{ path('app_order_index') }}" class="button">Les Commandes RouenBio</a>
+	<a href="{{ path('profile_admin') }}" class="button">Mon profile</a>
+{% endblock %}

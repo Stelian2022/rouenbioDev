@@ -1,0 +1,24 @@
+<nav class="menu">
+        <input type="checkbox" id="toggle"/>
+        <label for="toggle" class="burger-menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </label>
+        <ul class="menu-items">
+            {% for menuKey, menuValue in menus %}
+                <li class="parent">
+                    <a href="#">{{ menuKey }}</a>
+                    {% if menuValue is iterable %}
+                        <ul class="submenu">
+                            {% for subMenu in menuValue %}
+                                <li>
+                                    <a href="#">{{ subMenu }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>

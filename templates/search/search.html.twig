@@ -1,0 +1,20 @@
+{# {% block content %}
+	<div class="search-form">
+		{{ form_start(form) }}
+		{{ form_widget(form.query, {'attr': {'class': 'search-input', 'placeholder': 'Search'}}) }}
+
+		<button type="submit" class="search-button">
+			<i class="fas fa-search"></i>
+		</button>
+		{{ form_end(form) }}
+	</div>
+    <div>
+		{% if results is not empty %}
+			<div class="search-results">
+				{% for result in results %}
+					<p>{{ result.nomProduit }}</p>
+				{% endfor %}
+			</div>
+		</div>
+	{% endif %}
+{% endblock %} #}

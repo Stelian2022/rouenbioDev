@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Contact', 'link': '/contact' }
+] %}
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	<div class="presentation">
+		<div class="content">
+			<div class="textEquipe">
+				<p>
+					Notre philosophie est de pratiquer des prix accessibles à tous les budgets pour que chacun puisse profiter de produits sains.</p>
+				<p>
+					Tout le monde doit pouvoir accéder à des produits bio et locaux sans se ruiner, c’est ce que nous voulons montrer à travers notre politique de prix.
+				</p>
+				<p>Nous voulons rendre « La bio accessible à tous », slogan inscrit sur notre devanture.</p>
+				<p>Pour que chacun de nos CLIENTS puisse profiter de nos produits BIO, sains et naturels… et tout cela depuis plus de 26 ans à votre service!</p>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

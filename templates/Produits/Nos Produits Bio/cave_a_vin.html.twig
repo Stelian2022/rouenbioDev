@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Nos Produits Bio', 'link': '/produits/nos-produits-bio' }
+] %}
+{% block content %}
+<div class="newPage">
+			<h1>{{currentPage}} Bio</h1>
+		</div>
+{{ render(controller('App\\Controller\\SearchController::search', { 'request': app.request })) }}
+ <div id="presentation">
+		<div class="content">
+			<div class="text">
+                    <p>Rouen Bio a entièrement refait sa cave à vin !</p>
+
+                    <p> Découvrez notre sélection de vins bio, une symphonie de saveurs authentiques et respectueuses de l'environnement. Chez [nom de votre magasin bio], nous vous proposons une gamme de vins biologiques soigneusement choisis pour vous offrir une expérience gustative exceptionnelle.</p>
+
+                    <p>Nos vins bio sont issus de vignobles cultivés de manière durable, sans l'utilisation de pesticides ou de produits chimiques nocifs. Chaque bouteille incarne le terroir, reflétant le caractère unique de chaque cépage et de chaque région viticole.</p>
+
+                    <p>Que vous soyez un amateur de vins passionné ou simplement à la recherche d'une bouteille pour accompagner vos repas, notre équipe d'experts en vins vous guidera dans le choix du vin parfait. Nous valorisons la qualité, l'authenticité et le respect de l'environnement, en privilégiant les vignerons engagés dans des pratiques biologiques et durables.</p>
+
+                    <p>Venez découvrir notre rayon vins bio et laissez-vous séduire par des saveurs naturelles, des arômes subtils et des textures délicates. Savourez chaque gorgée en sachant que vous soutenez des pratiques viticoles respectueuses de la terre et de votre santé.</p>
+
+                    <p>Chez [nom de votre magasin bio], nous célébrons l'alliance entre la passion pour le vin et le respect de la nature. Rejoignez-nous pour explorer notre sélection de vins bio et découvrez des trésors viticoles qui émerveilleront vos papilles.</p>
+
+                    <p>Visitez notre magasin bio dès aujourd'hui et laissez-vous emporter par l'art et la science de la viticulture biologique.</p>
+                    <p> Vous pourrez désormais y trouver un large choix de vins bio dynamiques rouges, rosés et blancs d’exception ainsi que des vins spiritueux, effervescents et apéritifs.</p>
+                </div>
+                <div class="image"><img src="{{ asset('assets/img/cave-a-vin-bio.jpg') }}" alt="Les Vins Bio"></div>
+            </div>
+        </div>
+        </div>
+
+{% endblock %}

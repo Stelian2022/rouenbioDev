@@ -1,0 +1,76 @@
+/* formulaire */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* padding-bottom: 10rem; */
+}
+.registration-form ul li {
+  color: red;
+}
+.registration-form p {
+  font-size: 0.8em;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+
+  border: 1px solid #bbb;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+.livraison h1 {
+  text-align: center;
+  padding-bottom: 2rem;
+  font-size: 1rem;
+}
+.livraison p {
+  text-align: center;
+  padding-bottom: 2rem;
+  font-size: 1rem;
+}
+.sum b {
+  font-size: 0.9rem;
+}
+.titleForm h2 {
+  font-size: 1em;
+}
+.titleForm h1{
+  font-size: 1.5em;
+}
+.titleForm {
+  text-align: center;
+  padding: 10px;
+}
+.titleForm p{
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  #contact {
+    width: 500px;
+  }
+  .sum b {
+    font-size: 1rem;
+  }
+  .livraison h1 {
+    text-align: center;
+    padding-bottom: 2rem;
+    font-size: 2rem;
+  }
+  .livraison p {
+    text-align: center;
+    padding-bottom: 2rem;
+    font-size: 2rem;
+  }
+  .registration-form {
+    padding-bottom: 20rem;
+  }
+  .titleForm h1{
+    font-size: 2em;
+  }
+}

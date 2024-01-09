@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Deconnexion', 'link': '/logout' }
+] %}
+
+{% block content %}
+	<div class="newPage">
+			<h1>{{currentPage}}</h1>
+		</div>
+<a href="{{ path('admin_clients') }}" class="button">Retour à la liste</a>
+<a href="{{ path('app_user_edit', {'id': user.id}) }}" class="button">Modifier</a>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+           
+            <tr>
+                <th>Points fidelité</th>
+                {# <td>{{ user.pointsFidelite }}</td> #}
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ user.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ user.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ user.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ user.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Code postale</th>
+                <td>{{ user.codePostale }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ user.ville }}</td>
+            </tr>
+             <tr>
+                <th>Roles</th>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+            </tr
+            <tr>
+                <th>Date de création</th>
+                <td>{{ user.createdAt|date('d/m/Y H:i:s') }}</td>
+            </tr
+            
+        </tbody>
+    </table>
+
+    
+
+    
+
+    {{ include('user/admin/_delete_form.html.twig') }}
+{% endblock %}

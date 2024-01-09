@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+      { 'label': 'Accueil', 'link': '/' },
+    ] %}
+{% block content %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/general/form.css') }}">
+	<div class="newPage">
+	</div>
+</div>
+<div class="livraison">
+	<h1>Verifier si la livraison est disponible dans votre commune.</h1>
+
+
+</div>
+
+<div>
+	{{ form_start(form) }}
+	<div class="titleFrom">
+	<p class="cursive">*La livraison à domicile est actuellement indisponible. Veuillez contacter le magasin pour plus d'informations.</p>
+</div>
+	{{ form_row(form.postal_code) }}
+	<button type="submit">Chercher</button>
+	{{ form_end(form) }}
+	<div>
+	{% endblock %}

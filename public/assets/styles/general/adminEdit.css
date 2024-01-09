@@ -1,0 +1,50 @@
+/* Style général du formulaire */
+#produits {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(240, 248, 255, 0.8); /* Fond légèrement transparent */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style des champs de formulaire */
+  #produits div {
+    margin-bottom: 15px;
+  }
+  
+  #produits label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  #produits input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+  
+  /* Style du bouton */
+  .btn {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
+  
+form button{
+display: flex;
+    margin-top: 0;
+  }
+
+  

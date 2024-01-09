@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Deconnexion', 'link': '/logout' }
+] %}
+
+{% block content %}
+  <div class="newPage">
+ 
+	<h1>
+	Modifier Produit
+	</h1>
+   </div>
+    <a href="{{ path('app_produits_index') }}" class="button">Retour a la liste</a>
+    {{ include('view_produits/admin/_form.html.twig', {'button_label': 'Mettre a jour'}) }}
+    {{ include('view_produits/admin/_delete_form.html.twig') }}
+
+{% endblock %}

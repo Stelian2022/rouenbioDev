@@ -1,0 +1,273 @@
+/* Effects pages */
+#presentation .content {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.5s ease, transform 1s ease;
+}
+
+#presentation .content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#presentation .image {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.5s ease, transform 1s ease;
+}
+
+#presentation .image.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Style pour le conteneur principal */
+
+.newPage {
+  width: auto;
+  margin: 0 auto;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+/* Style pour l'en-tête */
+.newPage h1 {
+  font-size: 2em;
+  color: #333;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.video iframe {
+  width: 560px;
+  height: 315px;
+}
+
+/* General styles */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+
+}
+#presentation{
+  margin: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+ border-radius: 10px;
+}
+.text p {
+  font-size: 15px!important;
+  margin: 0;
+  padding: 5px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+.proj img {
+  max-width: 100%;
+  height: auto;
+  width: 400px; /* Adjust the width as desired */
+}
+.textEquipe p {
+  font-size: 15px!important;
+  margin: 0;
+  padding: 5px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.team1 p{
+  font-family: "courgette", sans-serif;
+  padding-left: 20px;
+  color: black;
+}
+.team1 h3{
+  font-family: "courgette", sans-serif;
+  padding-left: 20px;
+  color: black;
+}
+
+.image {
+  text-align: center;
+}
+
+.image img {
+  height: auto;
+}
+
+.team1 img {
+  max-width: 100%;
+  height: auto;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+}
+/* display tablette */
+@media (max-width: 1100px) {
+  .newPage h1 {
+    font-size: 2em;
+  }
+
+  .video iframe {
+    width: 560px;
+    height: 315px;
+  }
+  .video {
+    margin: auto;
+  }
+  .conseils p {
+    font-size: 12px;
+  }
+  .text p {
+    font-size: 14px!important;
+  }
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+}
+/* Styles pour les écrans avec une largeur minimale de 768 pixels */
+@media (min-width: 768px) and (max-width: 801px) {
+  .newPage {
+    padding-top: 100px;
+  }
+}
+@media (min-width: 802px) {
+  /* Grid layout for desktop */
+  .newPage {
+    padding-top: 50px;
+  }
+}
+@media (min-width: 768px) {
+  #art {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-top: 50px;
+  }
+
+  .sectionArt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sectionArt p {
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  .sectionArt img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  .team1 img {
+    border-radius: 8px;
+  }
+  .text p {
+    font-size: 17px;
+  }
+  .centered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .textEquipe p {
+    font-size: 17px;
+  }
+  .content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .team {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .team1 {
+    flex-basis: 30%;
+  }
+
+  .text {
+    width: 100%;
+  }
+  .textEquipe {
+    width: 100%;
+    padding-right: 20px;
+  }
+
+  .image img {
+    width: 70%;
+    text-align: right;
+  }
+}
+/* Mobile styles grandes*/
+@media screen and (max-width: 768px) {
+  /* Stack sections on mobile */
+
+  .newPage h1 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .video iframe {
+    width: 250px;
+    height: 150px;
+  }
+  .sectionArt {
+    margin-bottom: 20px;
+  }
+  .text p {
+    margin: 0;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    font-size: 12px!important;
+  }
+  .sectionArt p {
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+
+  .sectionArt img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto 10px;
+  }
+  .image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto 10px;
+  }
+  .team1 img {
+    border-radius: 8px;
+  }
+  .centered-image {
+    display: block;
+    margin: auto;
+    padding: auto;
+  }
+}

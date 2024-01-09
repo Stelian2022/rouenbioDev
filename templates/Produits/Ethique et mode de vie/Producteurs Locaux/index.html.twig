@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Ethique et mode de vie', 'link': '/produits/Ethique-Et-Mode-De-Vie' }
+] %}
+{% block content %}
+<div class="newPage">
+	<h1>{{currentPage}}</h1>
+</div>
+{{ render(controller('App\\Controller\\SearchController::search', { 'request': app.request })) }}
+<section id="articles">
+	<p class="article-count"></p>
+	<div class="articles" id="prodLocaux"></div>
+	<a href=""></a>
+</section>
+<script src="{{ asset('assets/js/producteursLocaux.js') }}" defer type="module">
+	{% endblock %}

@@ -1,0 +1,11 @@
+{% block content %}
+   <div class="search-form">
+    {{ form_start(form, { 'action': path('search_results') }) }}
+    {{ form_widget(form.query, {'attr': {'class': 'search-input', 'placeholder': 'Search'}}) }}
+     <button type="submit" class="search-button">
+     <i class="fas fa-search"></i>
+     </button>
+    {{ form_end(form) }}
+</div>
+  
+{% endblock %}

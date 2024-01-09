@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Livraison a domicile', 'link': '/cart' }
+] %}
+{% block title %}Verifier vos informations
+{% endblock %}
+{% block main %}{% endblock %}
+{% block content %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/general/form.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/styles/shopping/panier.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/styles/shopping/panierCheckout.css') }}">
+	<h1>
+		{{currentPage}}
+	</h1>
+	<div id="cardPanier">
+		{# {{ include('user/admin/_form.html.twig', {'button_label': 'Mettre à jour et valider'}) }} #}
+		{# {% include 'user/admin/_form.html.twig' with {'form': form} only %} #}
+
+			<form method="POST" action="{{ path('confirmationLivraison') }}"> {{ form_widget(form) }}
+			<button type="submit" class="btn btn-warning w-100">Valider et payer</button>
+		</form>
+
+		<div class="total">
+			<h5 class="card-header bg-dark text-white">Sommaire</h5>
+			{% for item in cart.items %}
+				<div class="confirmationSum">
+					<span class="sum">
+						<b>{{ item.produit }}
+							x
+							{{ item.quantity }}...</b>
+					</span>
+				{% endfor %}
+			</div>
+			<div class="sousTotal">
+				<b>{{ cart.total }}
+					€</b>
+			</div>
+			<li class="list-group-total d-flex justify-content-between"></li>
+			<span class="sum">
+				<b>
+					Livraison....</b>
+
+
+				<b>4.99 €</b>
+			</span>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-total d-flex justify-content-between"></li>
+				<span class="sum">
+					<b>
+						Total TTC + Livraison</b>
+					<b>{{ cart.total + 4.99 }}
+						€
+					</b>
+				</span>
+			</ul>
+		</div>
+	</div>
+{% endblock %}

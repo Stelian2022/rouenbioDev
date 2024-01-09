@@ -1,0 +1,223 @@
+/* Styles for the footer */
+#footer {
+    background-color: #1E37FF;
+    color: white;
+  }
+.legale {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.legale ul {
+    list-style-type: none;
+    padding: 0;
+    display: inline-block;
+}
+
+.legale li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.legale li a {
+    color: #555555;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.legale li a:hover {
+    color: #333333;
+}
+
+.footer {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+/* footer */
+footer {
+    width: 100%;
+    padding: 1rem;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 0px 5px #bbb;
+    -moz-box-shadow: 0px 0px 5px #bbb;
+    box-shadow: 0px -3px 5px #bbb;
+  }
+
+.footer a:hover {
+    color: #cccccc;
+}
+/*footer*/
+/*heures*/
+.ouverture {
+    background-color: #f2f2f2; /* Couleur de fond de la section */
+    padding: 20px; /* Espacement interne de la section */
+    border-radius: 4px; /* Arrondi des bords de la section */
+  }
+  
+  .ouverture p {
+    margin: 0; /* Suppression des marges par défaut des paragraphes */
+    line-height: 1.5; /* Espacement entre les lignes des paragraphes */
+  }
+  
+  .ouverture p:first-child {
+    font-weight: bold; /* Mise en gras du premier paragraphe */
+    margin-bottom: 10px; /* Espacement en bas du premier paragraphe */
+  }
+  
+  /*sociall*/
+  /* Style for the 'about' section */
+  
+  #store a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  #store a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Style for the 'store' section */
+  #store {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  #location {
+    flex: 1;
+  }
+  
+  #store h2 {
+    color: #ffffff!important;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .store {
+    flex: 1;
+    margin-left: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #ffffff;
+    padding-top: 10px;
+  }
+  
+  .store i {
+    margin-right: 10px;
+  }
+  
+  .store p {
+    margin: 0;
+  }
+  
+  .social a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .social a:hover {
+    color: #ffffff;
+  }
+  .footerCont{
+    display: flex;
+    justify-content: space-between;
+  }
+  .footerCont div{
+    width: 33%;
+  }
+  .footerCont div a{
+    font-size: 2em;
+  }
+
+  /*fin social section*/
+/* CSS pour les écrans de petite taille */
+/* ==================================== */
+
+@media (max-width: 768px) {
+  .footerCont{
+    display: flex;
+    flex-direction: column;
+  }
+  .footerCont div{
+    width: 100%;
+  }
+  .footerCont div p{
+    font-size: 1em;
+  }
+  .creditFooter{
+    font-size: .7rem;
+  }
+    /*footer*/
+  .photo img {
+    width: 100%;
+  }
+  .photo {
+    display: flex;
+    flex-direction: column;
+  }
+  #middle {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .fb-page {
+    width: 100%;
+    margin-bottom: 20px;
+    height: auto;
+    align-items: center;
+  }
+
+  .fb-page img.zoom {
+    pointer-events: none;
+  }
+  
+  /*about section et map google*/
+
+  #store {
+    display: flex;
+    flex-direction: column;
+  }
+  .store {
+    padding-top: 0;
+  }
+
+  .location-container {
+    padding-right: 20px;
+  }
+
+}
+/* Vendor Prefixes */
+@supports (-webkit-touch-callout: none) {
+    /* Styles for iPhones and Safari */
+    .legale ul {
+        display: -webkit-inline-box;
+    }
+    
+    .legale li {
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+    }
+    
+    .footer a,
+    .legale li a:hover {
+        -webkit-transition: color 0.3s;
+    }
+}

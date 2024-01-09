@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Mon Espace', 'link': '/user/profile' }
+] %}
+{% block title %}Commande finalisé
+{% endblock %}
+{% block content %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/shopping/panierCheckout.css') }}">
+	<h1>
+		{{currentPage}}
+	</h1>
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+				<h4>L'équipe Rouen Bio vous remercie pour votre commande.
+				</h4>
+				<h4>Vous allez recevoir un email de confirmation.</h4>
+				<a href="{{ path('accueil') }}">Revenir a l'accueil</a>
+			</div>
+			{% if app.session.flashBag.has('success') %}
+				<div class="alert alert-success">
+					{{ app.session.flashBag.get('success')[0] }}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+
+{% endblock %}

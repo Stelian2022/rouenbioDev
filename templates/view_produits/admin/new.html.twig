@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Deconnexion', 'link': '/logout' }
+] %}
+
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+
+	{{ include('view_produits/admin/_form.html.twig') }}
+
+	<a href="{{ path('app_produits_index') }}" class="button">Retour à la liste</a>
+{% endblock %}

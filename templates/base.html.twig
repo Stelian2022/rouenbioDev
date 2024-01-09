@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		{% block stylesheets %}
+			<meta property="og:image" content="{{ asset('assets/img/cover.png') }}"/>
+			<meta property="og:title" content="RouenBio : Votre Magasin Bio de Confiance"/>
+			<meta property="og:description" content="La Bio en Promo : depuis 28 ans en tant que magasin indépendant nous promouvons tous les jours nos producteurs locaux et nous sommes engagés auprès de nos clients avec une BIO Responsable et Locale. Selon nos chers clients, qui comparent les prix tous les jours dans la situation d’inflation actuelle, nous sommes chez Rouen Bio au minima - 10% Moins Chers que les autres magasins BIO de la métropole rouennaise. À très vite chez nous!"/>
+			<meta property="og:url" content="https://rouenbiomonde.fr"/>
+			<meta name="description" content="RouenBio : Votre Magasin Bio de Confiance"/>
+			<meta property="og:description" content="La Bio en Promo : depuis 28 ans en tant que magasin indépendant nous promouvons tous les jours nos producteurs locaux et nous sommes engagés auprès de nos clients avec une BIO Responsable et Locale. Selon nos chers clients, qui comparent les prix tous les jours dans la situation d’inflation actuelle, nous sommes chez Rouen Bio au minima - 10% Moins Chers que les autres magasins BIO de la métropole rouennaise. À très vite chez nous!"/>
+			<meta name="keywords" content="Bio rouen, Magasin Bio Rouen, Produits Bio Rouen, Alimentation Bio Rouen, Épicerie Bio Rouen, Cosmétiques Bio Rouen, Produits Locaux Bio Rouen, Santé Naturelle Rouen, Agriculture Biologique Rouen, Éco-Responsable Rouen, Mode de Vie Sain Rouen, Aliments Frais Bio Rouen, Commerce Équitable Rouen, Produits Écologiques Rouen, Boutique Bio Rouen, Produits Organiques Rouen, Marché Bio Rouen, Alimentation Saine Rouen, Green Living Rouen, Bien-Être Naturel Rouen"/>
+			<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/apple-touch-icon.png') }}">
+			<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicon-32x32.png') }}" type="image/x-icon">
+			<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicon-16x16.png') }}" type="image/x-icon">
+			<link rel="manifest" href="{{ asset('assets/img/site.webmanifest') }}">
+			<link rel="mask-icon" href="{{ asset('assets/img/safari-pinned-tab.svg') }}" color="#5bbad5">
+			<meta name="msapplication-TileColor" content="#da532c">
+			<meta name="theme-color" content="#ffffff">
+			<link rel="stylesheet" href="{{ asset('assets/styles/components/menu.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/style.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/all.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/components/promos.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/components/footer.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/contenu/vendor.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/contenu/pages.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/general/user.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/general/userProfil.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/components/navigation.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/contenu/carriere.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/components/menuCards.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/shopping/articles.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/contenu/reviews.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/contenu/pagination.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/general/adminEdit.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/general/formSearch.css') }}">
+			<link rel="stylesheet" href="{{ asset('assets/styles/components/newsletter.css') }}">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIZhR97WdqQjjllKAVw3gFlGrVQwzc_co&libraries=places&callback=initMap" async defer></script>
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+		
+		{% block title %}
+			<title>
+				{{ site_title }}
+				:
+				{{ currentPage }}</title>
+		{% endblock %}
+	</head>
+	<body>
+		<header>
+			{% block header %}
+				{% include 'Components/header.html.twig' %}
+			{% endblock %}
+		</header>
+
+		<main>
+
+			{% block newPage %}{% endblock %}
+			{% block content %}
+				{# {% include 'Components/slider.html.twig' %} #}
+				{% include 'Components/promo.html.twig' %}
+
+			{% endblock %}
+			{% block main %}
+				{% include 'Components/main.html.twig' %}
+			{% endblock %}
+			{% block avis %}{% endblock %}
+		</main>
+		<footer>
+			{% block footer %}
+				{% include 'Components/footer.html.twig' %}
+			{% endblock %}
+		</footer>
+		{% block scripts %}
+			<script src="{{ asset('assets/js/script.js') }}" defer></script>
+			script src="{{ asset('assets/js/ajourCart.js') }}" defer></script>
+			<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0&appId=173113435572173&autoLogAppEvents=1" nonce="lzrvza9I"></script>
+			<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		{% endblock %}
+	</body>
+</html>

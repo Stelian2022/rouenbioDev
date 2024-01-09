@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Ethique et mode de vie', 'link': '/produits/ethique-et-mode-de-vie' }
+] %}
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	{{ render(controller('App\\Controller\\SearchController::search', { 'request': app.request })) }}
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+				<p>
+					Nous nous engageons auprès de producteurs partageant les mêmes valeurs que Rouen Bio.
+				</p>
+				<p>
+					Parmi nos producteurs locaux, nous pouvons citer la ferme Saint Mamert et ses pains au levain (Buis sur Damville dans l’Eure), la boulangerie Le Petit Minotier et ses pains sans gluten (Darnétal), Biofair et ses compléments protéinés (Darnétal également) ainsi que Les Vergers Du Quesnay et ses boissons (Pissy-Pôville).
+				</p>
+				<p>
+					5 bonnes raisons d’acheter des produits locaux en tant que consommateur :</p>
+				<p>
+					• Profiter de pro</p>
+				onomie locale
+				<p>
+					• Pour l’écologie, le circuit court évitant les trajets inutiles et limitant l’impact environnemental</p>
+				<p>
+					• Avoir plus de choix de</p>
+				duits de saison, sains et d’une haute qualité
+				<p>
+					• Encourager l’éc variétés (étant donné que certains produits supportent mal le transport, ils ne peuvent pas être exportés, il n’y a pas ce problème avec les producteurs régionaux)</p>
+				<p>
+					• Manger sain à des prix accessibles
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

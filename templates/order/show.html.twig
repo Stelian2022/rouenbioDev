@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Deconnexion', 'link': '/logout' }
+] %}
+
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	<a href="{{ path('app_order_index') }}" class="button">Retour à la liste</a>
+	<a href="{{ path('app_order_edit', {'id': order.id}) }}" class="button">Modifier</a>
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Nr commande</th>
+				<td>{{ order.id }}</td>
+			</tr>
+			<tr>
+				<th>Status</th>
+				<td>{{ order.status }}</td>
+			</tr>
+			<tr>
+				<th>Livraison</th>
+				<td>{{ order.livraison }}</td>
+			</tr> 
+			<tr>
+				<th>Date création</th>
+				<td>{{ order.createdAt ? order.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td>{{ order.userEmail }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	{# <a href="{{ path('app_order_index') }}">Revenir a la liste</a> #}
+
+	{# <a href="{{ path('app_order_edit', {'id': order.id}) }}">Modifier</a> #}
+
+	{{ include('order/_delete_form.html.twig') }}
+{% endblock %}

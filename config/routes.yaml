@@ -1,0 +1,117 @@
+controllers:
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
+index:
+  path: /
+  controller: App\Controller\DefaultController::menu
+  methods: GET
+  requirements:
+    _format: html
+# search:
+#     path: /search
+#     controller: App\Controller\SearchController::search
+#     methods: [GET, POST]
+search_results:
+  path: /search/results
+  controller: App\Controller\SearchController::showResults
+  methods: [GET, POST]
+produit.detail:
+  path: /produit/produit/{id}
+  controller: App\Controller\ProduitsController::detail
+  methods: [GET, POST]
+check_eligibility:
+  path: /click_and_collect
+  controller: App\Controller\ClickAndCollectController::checkEligibility
+  methods: [GET, POST]
+mentions_legales:
+  path: /CGU/mentions-legales
+  controller: App\Controller\CGU\MentionLegalesController::index
+  methods: [GET, POST]
+conditions_utilisation:
+  path: /CGU/conditions-utilisation
+  controller: App\Controller\CGU\ConditionUtilisationController::index
+  methods: [GET, POST] 
+gestion_cookies:
+  path: /CGU/gestion-cookies
+  controller: App\Controller\CGU\GestionCookiesController::index
+  methods: [GET, POST]  
+newsletter_subscribe:
+    path: /newsletter_subscribe
+    controller: App\Controller\NewsletterSubscribeController::subscribe
+newsletter_confirmation:
+    path: /confirmation
+redirect_old_url:
+    path: /Categories/Nos Produits Bio/Boissons/
+    controller: App\Controller\RedirectController::redirectOldUrl   
+redirect_old_url2:
+    path: /Categories/Nos Produits Bio/Fruits et legumes/
+    controller: App\Controller\RedirectController::redirectOldUrl2
+redirect_old_url3:
+    path: /Categories/Nos Produits Bio/Produits frais/
+    controller: App\Controller\RedirectController::redirectOldUrl3  
+redirect_old_url4:
+    path: /Categories/Nos Produits Bio/Epicerie/
+    controller: App\Controller\RedirectController::redirectOldUrl4
+redirect_old_url5:
+    path: /Categories/Nos Produits Bio/Pains/
+    controller: App\Controller\RedirectController::redirectOldUrl5
+redirect_old_url6:
+    path: /Categories/Nos Produits Bio/Complements alimentaires/
+    controller: App\Controller\RedirectController::redirectOldUrl6
+redirect_old_url7:
+    path: /Categories/Nos Produits Bio/Cosmetiques/
+    controller: App\Controller\RedirectController::redirectOldUrl7
+redirect_old_url8:
+    path: /Categories/Nos Produits Bio/Hygiene/
+    controller: App\Controller\RedirectController::redirectOldUrl8
+redirect_old_url9:
+    path: /Categories/Nos Produits Bio/Bébé/
+    controller: App\Controller\RedirectController::redirectOldUrl9                                
+redirect_old_url10:
+    path: /Categories/Nos Produits Bio/Maison et entretien/
+    controller: App\Controller\RedirectController::redirectOldUrl10
+redirect_old_url11:
+    path: /Categories/Nos Produits Bio/Surgele/
+    controller: App\Controller\RedirectController::redirectOldUrl11
+redirect_old_url12:
+    path: /Categories/Nos Produits Bio/Cave a Vin/
+    controller: App\Controller\RedirectController::redirectOldUrl12  
+redirect_old_url13:
+    path: /Categories/Nos Produits Bio/Le Vrac/
+    controller: App\Controller\RedirectController::redirectOldUrl13
+redirect_old_url14:
+    path: /Categories/Nos Produits Bio/Le Vegan/
+    controller: App\Controller\RedirectController::redirectOldUrl14
+redirect_old_url15:
+    path: /Categories/Nos Produits Bio/Sans gluten/
+    controller: App\Controller\RedirectController::redirectOldUrl15
+redirect_old_url16:
+    path: /Categories/Nos Produits Bio/Produits locaux/
+    controller: App\Controller\RedirectController::redirectOldUrl16 
+redirect_old_url17:
+    path: /Categories/Nos Produits Bio/Producteurs locaux/
+    controller: App\Controller\RedirectController::redirectOldUrl17
+redirect_old_url18:
+    path: /Categories/À propos/Equipe/
+    controller: App\Controller\RedirectController::redirectOldUrl18
+redirect_old_url19:
+    path: /Categories/À propos/L'Art de la simplicité/
+    controller: App\Controller\RedirectController::redirectOldUrl19
+redirect_old_url20:
+    path: /Categories/À propos/Qui nous sommes/
+    controller: App\Controller\RedirectController::redirectOldUrl20
+redirect_old_url21:
+    path: /Categories/À propos/Conseils personalisés/
+    controller: App\Controller\RedirectController::redirectOldUrl21
+redirect_old_url22:
+    path: /Categories/À propos/Les projets/
+    controller: App\Controller\RedirectController::redirectOldUrl22
+redirect_old_url23:
+    path: /Categories/À propos/H2Origin/
+    controller: App\Controller\RedirectController::redirectOldUrl23
+redirect_old_url24:
+    path: /Categories/À propos/Produits frais/
+    controller: App\Controller\RedirectController::redirectOldUrl24
+                                   

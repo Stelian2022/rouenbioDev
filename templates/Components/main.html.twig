@@ -1,0 +1,92 @@
+{% block main %}
+
+	<!-- section categories -->
+	<section id="mainSection">
+		<div class="category">
+			<div class="cat">
+				<a href="{{ path('fruits_legumes', {slug: 'fruits-et-legumes'}) }}"><img src="{{ asset('assets/img/fruits-et-legumes-bio-rouen.png') }}" alt="Fruits et Légumes" title="Fruits et légumes Bio">
+				</a>
+			</div>
+			<div class="cat">
+				<a href="{{ path('produits_frais', {slug: 'produits-frais'}) }}"><img src="{{ asset('assets/img/frais.png') }}" alt="Produits frais" title="Produits frais Bio">
+				</a>
+			</div>
+			<div class="cat">
+				<a href="{{ path('epiceries', {slug: 'epicerie'}) }}"><img src="{{ asset('assets/img/epicerie.png') }}" alt="Epicerie" title="Epicerie Bio">
+				</a>
+			</div>
+			<div class="cat">
+				<a href="{{ path('pains', {slug: 'pains'}) }}"><img src="{{ asset('assets/img/pains.png') }}" alt="Pains" title="Pains Bio">
+				</a>
+			</div>
+			<div class="cat">
+				<a href="{{ path('boissons', {slug: 'boissons'}) }}"><img src="{{ asset('assets/img/boissons.png') }}" alt="Boissons" title="Boissons Bio">
+				</a>
+			</div>
+			<div class="cat">
+				<a href="{{ path('complements_alimentaires', {slug: 'complements-alimentaires'}) }}"><img src="{{ asset('assets/img/complements-alimentaires.png') }}" alt="Complements alimentaires" title="Complements alimentaires Bio">
+				</a>
+			</div>
+			<div class="cat">
+				<a href="{{ path('cosmetiques', {slug: 'cosmetiques'}) }}"><img src="{{ asset('assets/img/cosmetique-rouen-bio.png') }}" alt="Cosmetiques" title="Cosmétiques Bio"></a>
+			</div>
+			<div class="cat">
+				<a href="{{ path('hygiene', {slug: 'hygiene'}) }}"><img src="{{ asset('assets/img/hygiene.png') }}" alt="Hygiène" title="Hygiène Bio">
+				</a>
+			</div>
+			<div class="cat">
+				<a href="{{ path('produits_locaux', {slug: 'produits locaux'}) }}"><img src="{{ asset('assets/img/produits-locaux-rouen-bio.png') }}" alt="Produits locaux" title="Produits locaux">
+				</a>
+			</div>
+			<div class="cat">
+				<a href="{{ path('le_vrac', {slug: 'le vrac'}) }}"><img src="{{ asset('assets/img/vrac-bio-rouen.png') }}" alt="Le Vrac" title="Le Vrac">
+				</a>
+			</div>
+			<div class="cat">
+				<a href="{{ path('le_vegan', {slug: 'le végan'}) }}"><img src="{{ asset('assets/img/produits-vegan.png') }}" alt="Le Végan" title="Le Végan">
+				</a>
+			</div>
+			<div class="cat">
+				<a href="{{ path('sans_gluten', {slug: 'Sans Gluten'}) }}"><img src="{{ asset('assets/img/produits-sans-gluten.png') }}" alt="Produits sans gluten Bio" title="Produits sans gluten Bio">
+				</a>
+			</div>
+		</div>
+		<div class="phraseRouenBio">
+			<h2>"La Bio en Promo : depuis 28 ans en tant que magasin indépendant nous promouvons tous les jours nos producteurs locaux et nous sommes engagés auprès de nos clients avec une BIO Responsable et Locale.                                                              <p> Selon nos chers clients, qui comparent les prix tous les jours dans la situation d’inflation actuelle, nous sommes chez Rouen Bio au minima - 10% Moins Chers que les autres magasins BIO de la métropole rouennaise.</p> <p>À très vite chez nous!"</p></h2>
+			<img src="{{ asset('assets/img/Logo Biomonde-rond-01.png') }}" alt="RouenBio" title="RouenBio Slogan">
+		</div>
+	</section>
+	<div id="bande">
+		<div class="bande1">
+			<span>LE CHOIX<h3>19300  références !</h3>
+			</span>
+		</div>
+		<div class="bande2">
+			<span>DISPONIBLE<h2>Le magasin est ouvert 6 jours sur 7</h2>
+			</span>
+		</div>
+		<div class="bande1">
+			<span>L'EXPÉRIENCE<h1>Rouen bio à votre service depuis 28 ans !</h1>
+			</span>
+		</div>
+		<div class="bande2">
+			<span>RESPECT DE VOTRE MODE DE VIE<h2>Grand choix de produits vegan et végétarien</h2>
+			</span>
+		</div>
+	</div>
+
+	<div class="ecriture">
+		<div class="image">
+			<a href="{{ path('des_prix_au_plus_juste', {slug: 'des-prix-au-plus-juste'}) }}"><img src="/assets/img/ecriture craie des prix au plus juste.png" alt="Des prix au plus juste" title="Des prix au plus juste"></a>
+		</div>
+		<div class="image">
+			<a href="{{ path('producteurs_locaux', {slug: 'producteurs-locaux'}) }}"><img src="/assets/img/ecriture craie producteurs locaux.png" alt="Producteurs locaux" title="Producteurs locaux Bio"></a>
+		</div>
+		<div class="image">
+			<a href="{{ path('conseils_personnalises', {slug: 'conseils-personalises'}) }}"><img src="/assets/img/ecriture craie une equipe pour vous conseiller.png" alt="Conseils" title="Conseils personnalisés Bio"></a>
+		</div>
+	</div>
+</main>
+
+<!-- fin bande info -->
+<!-- Fin section categories -->{% endblock %}

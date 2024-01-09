@@ -1,0 +1,658 @@
+@font-face {
+    font-family: "montserrat";
+    font-family: "courgette";
+    src: url("../font/Montserrat-VariableFont_wght.ttf");
+    src: url("../font/Courgette-Regular.ttf");
+  }
+  /* CSS de base pour tous les écrans */
+  /* ================================== */
+  /* polices et couleurs */
+  * {
+    box-sizing: border-box;
+    font-family: "montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+   
+  }
+  main {
+    width: 100%;
+    background-color: white;
+  }
+  body {
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: white;
+    margin: 0 auto; /* Center align content horizontally */
+    display: flex; /* Use flexbox for center alignment */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align content vertically */
+    justify-content: center; /* Center align content horizontally */
+  }
+  
+  .motPatron h3 {
+    margin-top: 20px;
+    font-family: "courgette", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    animation: blink 2s infinite;
+    text-align: center;
+  }
+  .motPatron {
+    width: 100%;
+    align-items: center;
+  }
+  /* flash text header */
+  @keyframes blink {
+    0% {
+      color: #bed600;
+    }
+    50% {
+      color: #3e2b2e;
+    }
+    100% {
+      color: #bed600;
+    }
+  }
+  
+  /* header */
+  header {
+    
+    -webkit-box-shadow: 0px 0px 5px #bbb;
+    -moz-box-shadow: 0px 0px 5px #bbb;
+    box-shadow: 0px 3px 5px #bbb;
+  }
+  header {
+    
+    width: 100%;
+    
+  }
+  
+  /* section principale */
+  
+  /* system horaire header */
+  #horaire {
+    display: flex;
+  }
+  #message {
+    font-size: 15px;
+    text-align: center;
+    width: 350px;
+    color: white;
+  }
+  #dot {
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .mainPils {
+    text-align: center;
+  }
+  
+  
+  .photo {
+    display: flex;
+    width: 100%;
+  }
+  .photo img {
+    width: 50%;
+  }
+  /* Style the search field */
+  form.example input[type="text"] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: right;
+    width: 200px;
+    background: #f1f1f1;
+  }
+  form.example {
+    background-color: #bed600;
+  }
+  /* Style the submit button */
+  button {
+    background-color: #bed600; /* Couleur de fond du bouton */
+    color: black; /* Couleur du texte du bouton */
+    border: none; /* Suppression de la bordure */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    text-align: center; /* Alignement du texte au centre */
+    text-decoration: none; /* Suppression de la décoration de texte par défaut */
+    display: inline-block; /* Affichage en tant qu'élément inline avec espacement autour */
+    font-size: 16px; /* Taille de la police du texte */
+    border-radius: 4px; /* Arrondi des bords du bouton */
+    cursor: pointer; /* Curseur de souris en forme de pointeur au survol */
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Couleur de fond du bouton au survol */
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .socialH i {
+    font-size: 50px;
+    color: white;
+  }
+  
+  .top {
+    /* position: fixed; */
+  
+    display: flex;
+    flex-direction: row;
+    background-color: #3e2b2e;
+    -webkit-box-shadow: 0px 0px 5px #bbb;
+    -moz-box-shadow: 0px 0px 5px #bbb;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    justify-content: space-between;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .top li {
+    list-style-type: none;
+  }
+  
+  #imgHeader {
+    background-repeat: no-repeat;
+    block-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #bed600;
+  }
+  
+  #imgHeader .logo {
+    width: 5rem;
+    padding-top: 0.5rem;
+  }
+  
+  .adr a {
+    color: white;
+  }
+  
+  .top p {
+    font-family: "montserrat";
+    font-style: italic;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: white;
+    /* border: solid; */
+  }
+  
+  #mainPhoto {
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-image: url(../img/26.jpg);
+  }
+  
+  .location-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+  }
+  
+  .google {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  
+  .google iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .ecriture{
+  
+    margin: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+  #middle {
+    margin: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 90%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 450px;
+    z-index: 1;
+  
+  }
+  
+  /* j'ai rajouté un zoom pour l'image */
+  .fb-page img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+  }
+  .fb-page img.zoom {
+    transform: scale(1);
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .fb-page {
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .fb-page a {
+    color: #303a2f;
+  }
+  
+  img:last-child {
+    margin-right: 0;
+  }
+  a {
+    color: #169816;
+  }
+  /* section avec une seule colonne */
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  /* section avec deux colonnes */
+  section.two-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  section.two-columns div {
+    width: 48%;
+  }
+  
+  /* section avec trois colonnes */
+  section.three-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  section.three-columns div {
+    width: 30%;
+  }
+  
+  /* formulaire */
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #bbb;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+  }
+  
+  textarea {
+    height: 10rem;
+  }
+  
+  input[type="submit"] {
+    background-color: #169816;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .google {
+    height: 370px;
+  }
+  
+  #bande {
+    background-color: #bed600;
+    width: 100%;
+  }
+  
+  .subscribe {
+    background-color: #3e2b2e;
+  }
+  
+  /*section bande info*/
+  #bande {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3e2b2e;
+    padding: 10px;
+  }
+  
+  .bande1,
+  .bande2 {
+    flex-basis: 25%;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+  }
+  
+  .bande1 {
+    border-right: 1px solid #8f9a93;
+  }
+  
+  .bande2 {
+    border-left: 1px solid #8f9a93;
+  }
+  
+  .bande1 span,
+  .bande2 span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .bande1 p,
+  .bande2 p {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+  }
+  
+  /* desktop display display */
+  @media screen and (min-width: 768px) {
+    .motPatron {
+      position: absolute;
+      top: 230px;
+      position: fixed;
+      z-index: 5;
+    }
+  
+    /*header*/
+    header {
+     
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      background-color: #3e2b2e;
+      height: 230px;
+    }
+    .ecriture {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f2f2f2;
+      
+    }
+    
+    #message {
+      text-align: left;
+    }
+  
+    .adr {
+      margin-left: 20px;
+    }
+    #imgHeader .logo {
+      width: 6rem;
+    }
+    /*middle section*/
+  
+    .fb-page {
+      display: block;
+      padding: 1rem 0 0 2rem;
+      padding-bottom: 50px;
+    }
+    .social {
+      position: absolute;
+      display: flex;
+      right: 4rem;
+      height: 30px;
+    }
+    .socialH {
+      margin-right: 20px;
+    }
+    .social i {
+      font-size: 50px;
+    }
+    #imgHeader h2 {
+      font-size: 1.2rem;
+    }
+    #imgHeader h1 {
+      font-size: 2.5rem;
+    }
+    #imgHeader h1,
+    h2 {
+      color: #3e2b2e;
+      text-align: center;
+      display: block;
+      margin-right: 20px;
+    }
+  
+    
+  
+    .ecriture .image {
+      width: 30%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    .criture .image img {
+      width: 100%;
+      height: auto;
+      max-width: 250px;
+      margin-bottom: 10px;
+    }
+    /* section category */
+    .category {
+      display: -webkit-box; /* Old - iOS 6-, Safari 3.1-6 */
+      display: -ms-flexbox; /* TWEENER - IE 10 */
+      display: flex;
+      -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+      flex-wrap: wrap;
+      -webkit-justify-content: space-between; /* Safari 6.1+ */
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+  
+    .cat {
+      width: calc(25% - 10px);
+      margin-bottom: 20px;
+    }
+  
+    .cat:last-child {
+      margin-right: 0;
+    }
+  
+    .cat a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  
+    .cat img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      -webkit-transition: all 0.3s ease; /* Safari 3.1-6 */
+      transition: all 0.3s ease;
+    }
+  
+    .cat:hover img {
+      -webkit-transform: scale(1.1); /* Safari 3.1-8 */
+      transform: scale(1.1);
+    }
+  
+    /* contact section */
+  }
+  
+  /* CSS pour les écrans de petite taille */
+  /* ==================================== */
+  
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: center;
+    }
+    .motPatron {
+      position: absolute;
+      top: 160px;
+      position: fixed;
+    }
+    /*header*/
+    .socialH i {
+      font-size: 30px;
+    }
+    #message {
+      width: 150px;
+    }
+  
+    #imgHeader h2 {
+      font-size: 0.7rem;
+    }
+    #imgHeader h1 {
+      font-size: 1.5rem;
+    }
+  
+    .adr p {
+      font-size: 0.5rem;
+      margin-left: 20px;
+    }
+    .adr a {
+      margin-left: 20px;
+    }
+    #message {
+      font-size: 10px;
+      text-align: center;
+  
+      width: 200px;
+      color: white;
+    }
+    .socialH {
+      width: 60px;
+    }
+    .social {
+      font-size: 50px;
+      margin-top: 30px;
+    }
+  
+    nav a {
+      margin: 0.5rem 0;
+    }
+    /* section avec deux colonnes */
+    section.two-columns div {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  
+    /* section avec trois colonnes */
+    section.three-columns div {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  
+    .ecriture .image {
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    .ecriture .image img {
+      width: 100%;
+      height: auto;
+      max-width: 250px;
+      margin-bottom: 10px;
+    }
+    .category {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .cat {
+      width: 30%;
+      margin: 5px;
+    }
+  
+    .cat a {
+      display: block;
+      width: 100%;
+      padding-bottom: 100%; /* Maintain aspect ratio for the image */
+      position: relative;
+    }
+  
+    .cat img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    /*section bande */
+    #bande {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .bande1,
+    .bande2 {
+      width: 100%;
+    }
+    /* #middle {
+      margin-top: 100px;
+    } */
+    #middle .fb-page {
+      align-items: center;
+    }
+  }
+  /*display mobile tres petites */
+  @media (max-width: 480px) {
+    .top {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #message {
+      width: 150px;
+    }
+    .motPatron h3 {
+      font-size: 15px;
+      top: 180px;
+    }
+    .motPatron {
+      top: 180px;
+      padding: 10px;
+    }
+    .adr {
+      text-align: center;
+    }
+  }
+  

@@ -1,0 +1,28 @@
+{# newsletter_subscribe/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+] %}
+	
+
+{% block content %}
+<link rel="stylesheet" href="{{ asset('assets/styles/general/form.css') }}">
+<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+    
+    <div id="newsletterPopup" class="newsletter-popup">
+        <div class="newsletter-content">
+            <h2>Inscrivez-vous à notre newsletter</h2>
+            <p>Recevez les dernières actualités et promotions directement dans votre boîte de réception.</p>
+            {% set show_form = true %}
+            {# Include the newsletter subscription form #}
+            {% include 'newsletter_subscribe/newsletter_subscribe_form.html.twig' %}
+            
+            {# <div class="newsletter-close">
+                <span id="newsletter-close-icon" class="newsletter-close-icon">&times;</span>
+            </div> #}
+        </div>
+    </div>
+{% endblock %}

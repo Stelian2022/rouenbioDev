@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Conditions Utilisation', 'link': '/condition-utilisation' }
+] %}
+{% block title %}Mentions legales
+{% endblock %}
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+				<p>
+					Crédits</p>
+				<p>
+					Ce site est la propriété de la SAS L'art de la simplicité - Rouen Bio</p>
+
+				<p>
+					79 Boulevard du 11 Novembre 76140 Le Petit Quevilly</p>
+
+				<p>Tél 02 35 73 72 70</p>
+
+				<p>
+					Contact : Mr Luis Costea</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

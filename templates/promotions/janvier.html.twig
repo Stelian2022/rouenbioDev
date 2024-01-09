@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+      { 'label': 'Accueil', 'link': '/' },
+    ] %}
+{% block content %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/contenu/promoJanvier.css') }}">
+<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	<div class="presentation">
+		<h1>OFFRE JANVIER 2024</h1>
+		<div class="content">
+			<div class="image">
+				<img src="{{ asset('assets/img/promotions/mail.jpeg') }}" alt="Karine & Jeff RouenBio">
+			</div>
+			<div class="textEquipe">
+
+				<H2>Une rentrée réconfortante !</H2>
+				<p>
+					Chers clients de notre magasin Bio,
+				</p>
+				<p>
+					Nous espérons que cette nouvelle année débute sous les meilleurs auspices pour vous et votre famille !</p>
+
+				<p>
+					Chez Karine & Jeff, nous sommes ravis de vous inviter à déguster les recettes de soupes, spécialement conçues pour égayer les journées hivernales.
+				</p>
+				<p class="gras">
+					1 - La soupe de légumes - aux brocolis, carottes, poireaux, courge et origan
+				</p>
+				<p class="cursive">
+					Incontournable et indémodable parmi les recettes créées par Karine & Jeff, cette soupe associe les légumes racines (carottes), les légumes ronds (brocolis, courge) et les légumes feuilles (poireaux) : une célébration du légume sous toutes ses formes.
+				</p>
+				<p class="gras">2 - Soupe moelleuse au potimarron, champignons et estragon</p>
+				<p class="cursive">Toutes les saveurs douces du potimarron, des champignons, des pommes de terre et de l'estragon, dans une soupe veloutée et peu salée.</p>
+				<p class="gras">3 - Soupe lentilles, carottes, butternut, ciboulette et curcuma</p>
+				<p class="cursive">Cuisinée avec des carottes, des oignons et du poireau, notre soupe aux lentilles est très légèrement relevée avec du romarin. Peu de sel ajouté.</p>
+
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}

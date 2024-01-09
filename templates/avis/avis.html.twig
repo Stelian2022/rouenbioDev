@@ -1,0 +1,37 @@
+{% block script %}
+	<script src="{{ asset('assets/js/reviews.js') }}" defer></script>
+
+
+{% endblock %}
+
+<div class="avis"><a href="https://g.page/r/CcntOpqvsnN1EBM/review"> <img src="{{ asset('assets/img/Google_Avis_clients.png') }}" alt=""></a>
+	{# <g:ratingbadge merchant_id="A761402"></g:ratingbadge> #}
+
+</div>
+<!-- DÉBUT du code d'affichage du badge Google Avis clients -->
+<div>
+</div>
+<!-- FIN du code d'affichage du badge Google Avis clients -->
+{% for review in reviews %}
+	<div class="reviews-section">
+		<p><img src="{{ review.profile_photo_url }}" alt="">{{ review.author_name }}
+			{% for i in range(1, 5) %}
+				{% if review.rating >= i %}
+					<span class="star">&#9733;</span>
+				{% else %}
+					<span class="star">&#9734;</span>
+				{% endif %}
+			{% endfor %}
+		</p>
+		<p class="textAvis"></p>
+		{% if review.text|length > 100 %}
+			<div class="text-container">
+				<p class="short-text">{{ review.text|slice(0, 100) }}...</p>
+				<p class="full-text" style="display: none;">{{ review.text }}</p>
+				<a href="#" class="read-more">Lire la suite</a>
+			</div>
+		{% else %}
+			<p>{{ review.text }}</p>
+		{% endif %}
+	</div>
+{% endfor %}

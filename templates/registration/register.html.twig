@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Connexion', 'link': '/login' }
+] %}
+
+{% block content %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/general/form.css') }}">
+
+	<div class="newPage">
+	</div>
+	<div class="titleForm">
+	<h1>JE CRÉE MON COMPTE</h1>
+		<h2>Pour créer votre compte, renseignez l’ensemble des informations ci-dessous.</h2>
+	</div>
+	{{ form_start(registrationForm, {'attr': {'class': 'registration-form'}}) }}
+	{{ form_row(registrationForm.nom, {'attr': {'class': 'form-control'}}) }}
+	{{ form_row(registrationForm.prenom, {'attr': {'class': 'form-control'}}) }}
+	{{ form_row(registrationForm.telephone, {'attr': {'class': 'form-control'}}) }}
+	{{ form_row(registrationForm.departement, {'attr': {'class': 'form-control'}}) }}
+	{{ form_row(registrationForm.codePostale, {'attr': {'class': 'form-control'}}) }}
+	{{ form_row(registrationForm.ville, {'attr': {'class': 'form-control'}}) }}
+	{{ form_row(registrationForm.adresse, {'attr': {'class': 'form-control'}}) }}
+	{{ form_row(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
+	{{ form_row(registrationForm.plainPassword, {'label': 'Password', 'attr': {'class': 'form-control'}}) }}
+	{{ form_row(registrationForm.confirmPassword, {'label': 'Confirm Password', 'attr': {'class': 'form-control'}}) }}
+
+	{% if passError is defined %}
+		<div class="alert alert-danger" role="alert">{{ passError }}</div>
+	{% endif %}
+
+	<div class="form-group form-check">
+		{{ form_row(registrationForm.agreeTerms) }}
+
+	</div>
+
+	<button type="submit" class="button button-login">Register</button>
+	<p>Vos données personnelles sont collectées par RouenBio pour :</p>
+	<p>• Assurer la gestion de la relation client et de vos commandes</p>
+	<p>• Pour vous informer et vous faire bénéficier d’offres et avantages sur les produits et services proposés par RouenBio et les magasins de son réseau.</p>
+	<p>Plus d'information sur notre
+		<a href="{{ path('gestion_cookies') }}">
+			politique de protection des données personnelles</a>
+	</p>
+	{{ form_end(registrationForm) }}
+
+{% endblock %}

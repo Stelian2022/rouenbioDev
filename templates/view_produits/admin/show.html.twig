@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Deconnexion', 'link': '/logout' }
+] %}
+
+{% block content %}
+	<div class="newPage">
+			<h1>{{currentPage}}</h1>
+		</div>
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Id</th>
+				<td>{{ produit.id }}</td>
+			</tr>
+			<tr>
+				<th>Nom fournisseur</th>
+				<td>{{ produit.nomFournisseur }}</td>
+			</tr>
+			<tr>
+				<th>Nom rayon</th>
+				<td>{{ produit.nomRayon }}</td>
+			</tr>
+			<tr>
+				<th>Description</th>
+				<td>{{ produit.description }}</td>
+			</tr>
+			<tr>
+				<th>Prix venteTTC</th>
+				<td>{{ produit.prVenteTTC }}</td>
+			</tr>
+			<tr>
+				<th>Prix Achat BrutHT</th>
+				<td>{{ produit.prAchatBrutHT }}</td>
+			</tr>
+			<tr>
+				<th>Origine</th>
+				<td>{{ produit.origine }}</td>
+			</tr>
+			<tr>
+				<th>Nom produit</th>
+				<td>{{ produit.nomProduit }}</td>
+			</tr>
+			<tr>
+				<th>Image produit</th>
+				<td>{{ produit.imageProduit }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a href="{{ path('app_produits_index') }}" class="button">Retour à la liste</a>
+
+	<a href="{{ path('app_produits_edit', {'id': produit.id}) }}" class="button">Modifier</a>
+
+	{{ include('view_produits/admin/_delete_form.html.twig') }}
+{% endblock %}

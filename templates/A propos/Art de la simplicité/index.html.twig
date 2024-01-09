@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'À propos', 'link': '/a-propos' }
+] %}
+{% block content %}
+	{% if isArtPage %}
+		<div class="newPage">
+			<h1>{{currentPage}}</h1>
+		</div>
+		<div id="art">
+			<div class="sectionArt">
+				<img src="{{ asset('assets/img/LogoArt.jpg') }}" alt="L'Art de la simplicité BioRouen">
+				<p>
+					<span>
+						Bienvenue dans le monde de l'Art de la Simplicité, où nous célébrons une approche holistique de la vie axée sur une alimentation bio, un mode de vie sain et des choix conscients. Chez nous, la simplicité est bien plus qu'un concept, c'est un art de vivre épanouissant.</span>
+					<span>
+						Nous croyons fermement que revenir à l'essentiel est la clé pour cultiver un bien-être durable. C'est pourquoi nous mettons l'accent sur une alimentation bio et naturelle, mettant en avant des produits issus de l'agriculture biologique, exempts de pesticides et d'engrais chimiques. Notre sélection rigoureuse de fruits, légumes, céréales, et autres délices vous permettra de nourrir votre corps avec des aliments purs, pleins de vitalité et de saveurs authentiques.</span>
+					<span>
+						Mais l'Art de la Simplicité ne se limite pas à l'alimentation. C'est un mode de vie global qui valorise la durabilité, la consommation responsable et le respect de la nature. Nous vous proposons également une gamme de produits bio, éthiques et respectueux de l'environnement et des cosmétiques jusqu'aux produits ménagers. Chaque article est choisi avec soin pour son impact positif sur votre bien-être et sur la planète.</span>
+				</p>
+			</div>
+			<div class="sectionArt">
+				<p>
+					<span>
+						Nous vous invitons à embrasser cette philosophie de vie en adoptant des habitudes simples et équilibrées. Retrouvez la joie de préparer des repas sains à partir d'ingrédients bio et de créer un environnement sain et apaisant chez vous.</span>
+					<span>
+						Dans notre espace dédié à l'Art de la Simplicité, nous organisons également des ateliers, des conférences et des événements inspirants pour vous aider à explorer différentes facettes de cette approche de vie épanouissante. Rencontrez des experts, partagez vos expériences et rejoignez une communauté engagée dans la quête d'un équilibre harmonieux.</span>
+					<span>
+						Découvrez le pouvoir de l'Art de la Simplicité et laissez-vous guider vers une vie plus consciente, plus saine et plus épanouissante. Venez nous rendre visite et ensemble, créons un monde où la simplicité est synonyme de beauté, de bien-être et de bonheur authentique.</span>
+				</p>
+				<img src="{{ asset('assets/img/LogoArt.jpg') }}" alt="L'Art de la simplicité BioRouen">
+			</div>
+		</div>
+	{% endif %}
+
+{% endblock %}

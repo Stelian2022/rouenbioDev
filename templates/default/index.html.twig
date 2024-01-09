@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+     { 'label': '', 'link': '/' },
+    
+] %}
+
+{% block popup %}
+	{% include 'newsletter_subscribe/newsletter_popup.html.twig' %}
+{% endblock %}
+{% set currentPage = "Le plus ancien magasin bio de la Rive Gauche et sans doute un des premiers de la Métropole " %}
+{% block newPage %}
+{% endblock %}
+{% block avis %}
+	{% include 'avis/avis.html.twig' with { 'reviews': reviews } %}
+{% endblock %}
+{% block scripts %}
+	{# <script src="{{ asset('assets/js/slider.js') }}" defer></script> #}
+{% endblock %}
+
+{% block script %}
+	<script src="{{ asset('assets/js/newsletter.js') }}" defer></script>
+{% endblock %}

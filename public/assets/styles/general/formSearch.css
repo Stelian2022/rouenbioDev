@@ -1,0 +1,40 @@
+.search-form {
+  position: relative;
+  width:200px;
+  padding-left: 50px;
+}
+
+.search-input {
+  width: 200px;
+  height: 30px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: width 0.3s;
+}
+
+.search-input:focus {
+  width: 300px;
+  outline: none;
+}
+
+.search-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px; /* Ajustez la largeur selon vos besoins */
+  height: 30px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Centrer l'icône verticalement */
+  justify-content: center; /* Centrer l'icône horizontalement */
+}
+
+.search-button i {
+  color: #555;
+  font-size: 16px;
+}

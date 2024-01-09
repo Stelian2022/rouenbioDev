@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* cart quantity */
+#cartQuantity {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 50%;
+  background-color: red; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 5px; /* Marge à gauche pour séparer du contenu à côté */
+  transition: background-color 0.3s ease; /* Effet de transition pour le changement de couleur de fond */
+}
+
+#cartQuantity:hover {
+  background-color: #0056b3; /* Nouvelle couleur de fond au survol */
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+}
+.submenu {
+  display: none;
+}
+
+.menu-items {
+  display: flex;
+}
+
+.menu-items li {
+  position: relative;
+  list-style: none;
+}
+
+.menu-items li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.menu-items li:hover > ul {
+  display: block;
+}
+
+.submenu {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  padding: 10px;
+  min-width: 300px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.submenu li {
+  width: 100%;
+  background-color: #1e37ff;
+}
+
+.submenu li a {
+  padding: 8px 16px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.submenu li a:hover {
+  background-color: white;
+  color: black;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.burger-menu .line {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+}
+
+#toggle {
+  display: none;
+}
+.arrow.active {
+  transform: rotate(90deg);
+}
+.menu-items li a {
+  font-weight: 700;
+}
+/* desktop view */
+@media screen and (min-width: 768px) {
+  .burger-menu {
+    display: none;
+  }
+  .menu-items li a:hover {
+    color: #1e37ff;
+    text-transform: uppercase;
+  }
+}
+/* tablette View */
+@media screen and (max-width: 1095px) {
+  .menu-items li a {
+    padding: 9px 7px;
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 970px) {
+  .menu-items li a {
+    padding: 5px 4px;
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 837px) {
+  .menu-items li a {
+    padding: 5px 4px;
+    font-size: 0.7em;
+  }
+}
+/*Bigger Mobile View */
+@media screen and (max-width: 768px) {
+  .menu-items{
+    display: none;
+  }
+
+  .menu-items {
+    position: absolute;
+    z-index: 1;
+    left: 0; /* Position initiale en dehors de l'écran à gauche */
+    width: 100%;
+    background-color: white;
+    transition: left 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    padding: 10px;
+    margin-bottom: 2px;
+  }
+  /* .menu-items .parent {
+    width: auto;
+  } */
+  .submenu {
+    position: static;
+    z-index: 2;
+    /* top: 170px; */
+    transition: bottom 0.5s ease;
+    padding: 10px;
+  }
+
+  .menu-items li {
+    width: 100%;
+  }
+  .menu-items li a {
+    padding: 15px;
+  }
+  .menu-items a {
+    display: block;
+    padding: 8px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .menu-items a:hover {
+    background-color: #1e37ff;
+  }
+
+  #toggle:checked ~ .menu-items {
+    display: block;
+  }
+
+  .burger-menu {
+    position: absolute;
+    margin-top: 10px;
+  }
+  #toggle:checked ~ .burger-menu {
+    z-index: 2;
+    position: absolute;
+    right: 0;
+  }
+  .burger-menu .line {
+    background-color: #1e37ff;
+    transition: transform 0.3s ease;
+  }
+
+  #toggle:checked ~ .burger-menu .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #toggle:checked ~ .burger-menu .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  #toggle:checked ~ .burger-menu .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* LES FLESHES pour le sous menu display monile
+  */
+  .menu-items .submenu {
+    display: none;
+    padding-left: 10px;
+  }
+
+  .menu-items .submenu.open {
+    display: block;
+  }
+
+  .menu-items .has-submenu::before {
+    content: "\25B6";
+    display: inline-block;
+    margin-right: 5px;
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+  }
+
+  .menu-items .has-submenu.open::before {
+    transform: rotate(90deg);
+  }
+  .menu {
+    padding: 0;
+  }
+}
+/*Smaller Mobile View */
+@media screen and (max-width: 480px) {
+  .burger-menu {
+    position: absolute;
+  }
+}

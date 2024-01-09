@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Ethique et mode de vie', 'link': '/Ethique-Et-Mode-De-Vie' }
+] %}
+
+{% block content %}
+
+	<div class="newPage">
+		<h1>
+			{{currentPage}}
+		</h1>
+
+	</div>
+  
+	<section id="articles">
+    <p class="article-count">
+        {% for article in producteursLocaux %}
+            <div class="articles" id="produits">
+                <img src="{{ article.url }}" alt="">
+                <figcaption>{{ article.name }}</figcaption>
+                <p class="codepostal">{{ article.codepostal }}</p>
+                <p class="ville">{{ article.ville }}</p>
+                <p class="description">{{ article.description }}</p>
+                <a class="voir-plus" href="{{ path('article_show', {'id': article.id}) }}">Voir plus</a>
+            </div>
+        {% endfor %}
+    </p>
+</section>
+
+  {% endblock %}
+	
+
+

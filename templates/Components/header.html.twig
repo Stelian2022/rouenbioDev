@@ -1,0 +1,338 @@
+{% block script %}
+	<script src="{{ asset('assets/js/menu.js') }}" defer></script>
+	<script src="{{ asset('assets/js/script.js') }}" defer></script>
+{% endblock %}
+
+{% block header %}
+
+	<div class="icon-container">
+		<div class="icon" onclick="toggleText('adresse')">
+			<i class="fa-solid fa-location-dot"></i>
+		</div>
+		<div class="icon" onclick="toggleText('telephone')">
+			<i class="fa-solid fa-phone"></i>
+		</div>
+	</div>
+	<div id="adresse" class="hidden-text">79 Bd du 11 Novembre, Le Petit Quevilly 76140</div>
+	<div id="telephone" class="hidden-text">
+		<a href="tel:0235737270">02 35 73 72 70</a>
+	</div>
+	<script>
+		var currentlyVisibleText = null;
+
+function toggleText(textId) {
+var textElement = document.getElementById(textId);
+
+if (currentlyVisibleText !== null && currentlyVisibleText !== textElement) {
+currentlyVisibleText.classList.remove('text-visible');
+}
+
+textElement.classList.toggle('text-visible');
+currentlyVisibleText = textElement;
+}
+	</script>
+	<div class="top">
+		<div class="socialH">
+			<a href="https://www.facebook.com/MagasinRouenBio/" target="_blank">
+				<i class="fab fa-facebook-square"></i>
+			</a>
+			<a href="https://www.instagram.com/rouen_biomonde/" target="_blank">
+				<i class="fab fa-instagram"></i>
+			</a>
+		</div>
+	</div>
+
+	<div id="imgHeader">
+		<a href="{{ path('accueil') }}"><img class="logo" src="/assets/img/Logo Biomonde-rond-01.png" alt="Biomonde Rouen" title="Rouen Biomonde"></a>
+		<div class="title">
+			<h1>Rouen Bio</h1>
+			<h2>La Bio en Promo</h2>
+		</div>
+	</div>
+
+	<nav class="menu">
+		<input type="checkbox" id="toggle"/>
+		<label for="toggle" class="burger-menu">
+			<span class="line"></span>
+			<span class="line"></span>
+			<span class="line"></span>
+		</label>
+		<ul class="menu-items">
+		
+			<li class="parent">
+				<a href="{{ path('accueil') }}">Accueil</a>
+			</li>
+			<li class="parent" has-submenu>
+				<a href="#">À propos
+					<i class="fas fa-chevron-right arrow"></i>
+				</a>
+				<ul class="submenu">
+					<li>
+						<a href="{{ path('equipe') }}">Equipe</a>
+					</li>
+					<li>
+						<a href="{{ path('l_art_de_la_simplicite') }}">L'art de la simplicité</a>
+					</li>
+					<li>
+						<a href="{{ path('qui_nous_sommes') }}">Qui nous sommes</a>
+					</li>
+					<li>
+						<a href="{{ path('conseils_personnalises') }}">Conseils personnalisés</a>
+					</li>
+					<li>
+						<a href="{{ path('les_projets') }}">Les projets</a>
+					</li>
+					<li>
+						<a href="{{ path('h2origin') }}">Eau osmosée</a>
+					</li>
+				</ul>
+			</li>
+			<li class="parent" has-submenu no-link>
+				<a href="#">Nos Produits Bio
+					<i class="fas fa-chevron-right arrow"></i>
+				</a>
+				<ul class="submenu">
+					<li>
+						<a href="{{ path('fruits_legumes') }}">Fruits et légumes</a>
+					</li>
+					<li>
+						<a href="{{ path('produits_frais') }}">Produits frais</a>
+					</li>
+					<li>
+						<a href="{{ path('boissons') }}">Boissons</a>
+					</li>
+					<li>
+						<a href="{{ path('epiceries') }}">Épiceries</a>
+					</li>
+					<li>
+						<a href="{{ path('pains') }}">Pains</a>
+					</li>
+					<li>
+						<a href="{{ path('complements_alimentaires') }}">Compléments alimentaires</a>
+					</li>
+					<li>
+						<a href="{{ path('cosmetiques') }}">Cosmétiques</a>
+					</li>
+					<li>
+						<a href="{{ path('hygiene') }}">Hygiène</a>
+					</li>
+					<li>
+						<a href="{{ path('bebe') }}">Bébé</a>
+					</li>
+					<li>
+						<a href="{{ path('maison_et_entretien') }}">Maison et entretien</a>
+					</li>
+					<li>
+						<a href="{{ path('surgeles') }}">Surgelés</a>
+					</li>
+					<li>
+						<a href="{{ path('cave_a_vin') }}">Cave à vin</a>
+					</li>
+				</ul>
+			</li>
+			<li class="parent" has-submenu no-link>
+				<a href="#">Éthique et mode de vie
+					<i class="fas fa-chevron-right arrow"></i>
+				</a>
+				<ul class="submenu">
+					<li>
+						<a href="{{ path('le_vrac') }}">Le Vrac</a>
+					</li>
+					<li>
+						<a href="{{ path('le_vegan') }}">Le Vegan</a>
+					</li>
+					<li>
+						<a href="{{ path('sans_gluten') }}">Sans gluten</a>
+					</li>
+					<li>
+						<a href="{{ path('produits_locaux') }}">Produits locaux</a>
+					</li>
+					<li>
+						<a href="{{ path('producteurs_locaux') }}">Producteurs locaux</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="parent" has-submenu no-link>
+				<a href="#">Livraison et Drive
+					<i class="fas fa-chevron-right arrow"></i>
+				</a>
+				<ul class="submenu">
+					<li>
+						<a href="{{ path('app_click_and_collect') }}">Click and Collect</a>
+					</li>
+					<li>
+						<a href="{{ path('livraison') }}">Livraison</a>
+					</li>
+					<li>
+						<a href="{{ path('app_register') }}">Inscription</a>
+					</li>
+					<li>
+						<a href="{{ path('cart') }}">Mon panier</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="parent" has-submenu no-link>
+				<a href="#">Contact & Infos
+					<i class="fas fa-chevron-right arrow"></i>
+				</a>
+				<ul class="submenu">
+					<li>
+						<a href="{{ path('des_prix_au_plus_juste') }}">Des prix au plus juste</a>
+					</li>
+					<li>
+						<a href="{{ path('app_contact') }}">Contact</a>
+					</li>
+					<li>
+						<a href="{{ path('newsletter_subscribe') }}">Newsletter</a>
+					</li>
+					<li>
+						<a href="{{ path('infos') }}">Infos</a>
+					</li>
+				</ul>
+			</li>
+	<div class="button-container-mob">
+				{% if is_granted('ROLE_ADMIN') %}
+					<p class="greetings">
+						<span class="bjr">
+							{% if app.user.avatar %}
+								<img class="avatar-img" src="{{ asset('assets/img/avatars/' ~ app.user.avatar) }}" alt="Avatar"/>
+ 
+							{% endif %}
+							Bonjour,
+							{{ app.user.nom }}
+							{{ app.user.prenom }}
+						</span>
+					</p>
+					<p>
+						<span class="adm">Administrateur</span>
+					</p>
+
+					<a class="button button-logout" href="{{ path('profile') }}">
+						<i class="fas fa-user"></i>
+						Mon espace</a>
+					<a class="button button-logout" href="{{ path('app_logout') }}">
+						<i class="fas fa-sign-out-alt"></i>
+						Déconnexion</a>
+				{% elseif app.user %}
+					<p class="greetings">
+						<span class="bjr">
+							{% if app.user.avatar %}
+								<img class="avatar-img" src="{{ asset('assets/img/avatars/' ~ app.user.avatar) }}" alt="Avatar"/>
+							{% endif %}
+							Bonjour,
+							{{ app.user.nom }}
+							{{ app.user.prenom }}
+						</span>
+					</p>
+					<a class="button button-logout" href="{{ path('app_logout') }}">
+						<i class="fas fa-sign-out-alt"></i>
+					</a>
+				{% else %}
+					<a class="button button-login" href="{{ path('app_login') }}">
+						<i class="fas fa-user"></i>
+						Mon Compte
+					</a>
+				{% endif %}
+				<a href="{{ path('cart') }}" class="button button-login">
+					<i class="fas fa-shopping-cart"></i>
+					Mon Panier
+					{% if cart is defined %}
+						<span id="cartQuantity" class="badge">
+							{{ cart.items|length }}
+						</span>
+					{% endif %}
+				</a>
+			</div>
+		</ul>
+	</nav>
+
+	<div class="button-container-desk">
+		{% if is_granted('ROLE_ADMIN') %}
+			<p class="greetings">
+				<span class="bjr">
+					{% if app.user.avatar %}
+						<img class="avatar-img" src="{{ asset('assets/img/avatars/' ~ app.user.avatar) }}" alt="Avatar"/>
+
+					{% endif %}
+					Bonjour,
+					{{ app.user.nom }}
+					{{ app.user.prenom }}
+				</span>
+			</p>
+			<p>
+				<span class="adm">Administrateur</span>
+			</p>
+
+			<a class="button button-logout" href="{{ path('profile') }}">
+				<i class="fas fa-user"></i>
+			</a>
+			<a class="button button-logout" href="{{ path('app_logout') }}">
+				<i class="fas fa-sign-out-alt"></i>
+			</a>
+		{% elseif app.user %}
+			<p class="greetings">
+				<span class="bjr">
+					{% if app.user.avatar %}
+						<img class="avatar-img" src="{{ asset('assets/img/avatars/' ~ app.user.avatar) }}" alt="Avatar"/>
+					{% endif %}
+					Bonjour,
+					{{ app.user.nom }}
+					{{ app.user.prenom }}
+				</span>
+			</p>
+			<a class="button button-logout" href="{{ path('profile') }}">
+				<i class="fas fa-user"></i>
+			</a>
+			<a class="button button-logout" href="{{ path('app_logout') }}">
+				<i class="fas fa-sign-out-alt"></i>
+			</a>
+		{% else %}
+			<a class="button button-login" href="{{ path('app_login') }}">
+				<i class="fas fa-user"></i>
+				Mon Compte
+			</a>
+		{% endif %}
+		<a href="{{ path('cart') }}" class="button button-login">
+			<i class="fas fa-shopping-cart"></i>
+			Mon Panier
+			{% if cart is defined %}
+				<span id="cartQuantity" class="badge">
+					{{ cart.items|length }}
+				</span>
+			{% endif %}
+		</a>
+
+
+	</div>
+
+
+	<ul class="navigation">
+
+		{% for item in navigationItems %}
+			<li>
+				<a href="{{ item.link }}">{{ item.label }}</a>
+			</li>
+			{% if not loop.last %}
+				<li>
+					<span class="separator">></span>
+				</li>
+				<li>
+					<span class="current-page">{{ currentPage }}</span>
+				</li>
+				<li>
+					<span class="separator">></span>
+				</li>
+
+			{% endif %}
+		{% endfor %}
+
+	</ul>
+
+
+	{# Fin header section #}
+	<!-- section navigation pour les pages -->
+
+
+{% endblock %}

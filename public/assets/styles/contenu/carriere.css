@@ -1,0 +1,24 @@
+#carriere{
+    display: flex;
+    max-width: 1500px;
+    padding: 20px;
+}
+.poste{
+    width: 40%;
+    padding: 20px;
+}
+.poste img{
+    width: 100%;
+}
+/* display mobile */
+@media screen and (max-width: 767px) {
+    .poste{
+        width: 100%;
+        padding: 20px;
+    }
+    #carriere{
+        display: flex;
+       flex-direction: column;
+        padding: 20px;
+    }
+}

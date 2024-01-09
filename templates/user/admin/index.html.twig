@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Deconnexion', 'link': '/logout' }
+] %}
+
+
+{% block content %}
+
+	<p>{{ greeting }}</p>
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+
+
+	<a href="{{ path('admin') }}" class="btn btn-primary">Revenir en arrière</a>
+	<form method="GET" action="{{ path('admin_clients') }}">
+
+		<div class="form-group">
+			<label for="tri">Trier par:</label>
+			<select name="tri" id="tri" class="form-control">
+				<option value="nom">Nom</option>
+				<option value="email">Email</option>
+				<option value="montant">Montant Fidelité</option>
+				<option value="ville">Ville</option>
+			</select>
+		</div>
+		<button type="submit" class="btn btn-primary">Trier</button>
+	</form>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Email</th>
+				<th>Montant Fidelité</th>
+
+				<th>Nom</th>
+
+				<th>Prenom</th>
+				<th>Ville</th>
+				{# <th>Date de création</th>  #}
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{ knp_pagination_render(pagination) }}
+			{% for user in users %}
+
+				<td>{{ user.email }}</td>
+				<td></td>
+				<td>{{ user.nom }}</td>
+				<td>{{ user.prenom }}</td>
+
+				<td>{{ user.ville }}</td>
+
+
+				<td>
+					<a href="{{ path('app_user_show', {'id': user.id}) }}" class="button">Afficher</a>
+					<a href="{{ path('app_user_edit', {'id': user.id}) }}" class="button">Modifier</a>
+				</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td colspan="12">no records found</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>{% endblock %}

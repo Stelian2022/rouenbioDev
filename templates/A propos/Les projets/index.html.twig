@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'À propos', 'link': '/a-propos' }
+] %}
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}
+			RouenBio</h1>
+	</div>
+	<div class="presentation">
+		<div class="content">
+			<div class="text">
+				<h3>Le salon de thé</h3>
+				<p>Prochainement, un salon de thé sera installé au sein du magasin, dans la partie « bien-être ».
+										 Vous pourrez vous détendre autour d’un thé, tout en profitant de la mélodie du piano, installé depuis peu.
+				</p>
+				<h3>Le fast food</h3>
+				<p>Prochainement, un fast-food verra le jour au sein de Rouen Bio !
+				</p>
+				<p>Vous pourrez y déguster des préparations cuisinées à partir de fruits et légumes abîmés par exemple, pour vous prouver qu’ils sont toujours aussi bons et ainsi lutter contre le gaspillage ensemble.
+				</p>
+				<p>En préparant des plats végétariens et végans, nous vous montrerons que vous pouvez vous régaler avec des plats rapides à cuisiner !</p>
+			</div>
+			<div class="image">
+				<img src="{{ asset('assets/img/projets-rb.jpg') }}" alt="">
+			</div>
+		</div>
+	</div>
+{% endblock %}

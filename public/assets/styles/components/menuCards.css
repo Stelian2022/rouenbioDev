@@ -1,0 +1,66 @@
+/* Global styles */
+
+  
+  .container h2 {
+    margin-top: 20px;
+  }
+  #submenu-cards {
+    display: flex;
+  }
+  /* Card container */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Card styles */
+  .card {
+    width: calc(25% - 20px); /* Adjust the width as needed */
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Add this property */
+   
+  }
+  
+  .card a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    
+  }
+  .card .cardMenu {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .card .button{
+    color: #ffffff;
+  }
+  
+  .card p {
+    margin-top: 10px;
+  }
+  .card-container {
+    column-count: 2;
+    column-gap: 60px; /* Espace entre les colonnes, ajustez selon vos besoins */
+}
+
+.card {
+    break-inside: avoid; /* Évite que les cartes soient séparées sur deux colonnes */
+}
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+      /* padding: 10px; */
+    }
+  
+    .card p {
+      margin-top: 5px;
+    }
+  }
+  

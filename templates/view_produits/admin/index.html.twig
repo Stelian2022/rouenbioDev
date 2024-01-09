@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Deconnexion', 'link': '/logout' }
+] %}
+
+{% block content %}
+
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	<a href="{{ path('admin') }}" class="btn btn-primary">Revenir en arrière</a>
+	{{ knp_pagination_render(pagination) }}
+	<a href="{{ path('app_produits_new') }}" class="button">Ajouter un produit</a>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nom produit</th>
+				<th>Fournisseur</th>
+				<th>Rayon</th>
+				<th>Origine</th>
+				<th>Description</th>
+				<th>Image produit</th>
+				<th>Prix vente TTC</th>
+				<th>Prix Achat Brut HT</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for produit in pagination %}
+				<tr>
+					<td>{{ produit.id }}</td>
+					<td>{{ produit.nomProduit }}</td>
+					<td>{{ produit.nomFournisseur }}</td>
+					<td>{{ produit.nomRayon }}</td>
+					<td>{{ produit.origine }}</td>
+					<td>{{ produit.description }}</td>
+					<td>{{ produit.imageProduit }}</td>
+					<td>{{ produit.prVenteTTC }}
+						€</td>
+					<td>{{ produit.prAchatBrutHT }}
+						€</td>
+
+
+					<td class="edit">
+						<a href="{{ path('app_produits_show', {'id': produit.id}) }}" class="button">Afficher</a>
+						<a href="{{ path('app_produits_edit', {'id': produit.id}) }}" class="button">Modifier</a>
+						{{ include('view_produits/admin/_delete_form.html.twig') }}
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="11">no records found</td>
+				</tr>
+			{% endfor %}
+
+		</tbody>
+	</table>
+
+
+{% endblock %}

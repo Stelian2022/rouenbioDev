@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Deconnexion', 'link': '/logout' }
+] %}
+
+{% block content %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/admin/commandes.css') }}">
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+
+
+	<a href="{{ path('admin') }}" class="btn btn-primary">Revenir en arrière</a>
+	<form method="GET" action="{{ path('app_order_index') }}">
+
+		<div class="form-group">
+			<label for="tri">Trier par:</label>
+			<select name="tri" id="tri" class="form-control">
+				<option value="id">Nr commande</option>
+				<option value="userEmail">Email</option>
+				<option value="createdAt">Date de création</option>
+			</select>
+		</div>
+		<button type="submit" class="btn btn-primary">Trier</button>
+	</form>
+	{{ knp_pagination_render(pagination) }}
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Nr commande</th>
+				<th>Status</th>
+				<th>Livraison</th>
+				<th>Date création</th>
+				<th>Email</th>
+				<th>Produits</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for order in pagination %}
+				<tr>
+					<td>{{ order.id }}</td>
+					<td>{{ order.status }}</td>
+					<td>{{ order.livraison }}</td>
+					<td>{{ order.createdAt ? order.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+					<td>{{ order.userEmail }}</td>
+
+					<td>
+						{% for item in order.items %}
+							<p>
+								{{ item.produit }}
+								x
+								{{ item.quantity }}</p><br>
+						{% endfor %}
+					</td>
+					<td>
+						<a href="{{ path('app_order_show', {'id': order.id}) }}">Afficher</a>
+						{# <a href="{{ path('app_order_edit', {'id': order.id}) }}">edit</a> #}
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="7">Pas de commandes</td>
+				</tr>
+			{% endfor %}
+		</tbody> 
+	</table>
+
+	{# <a href="{{ path('app_order_new') }}">Create new</a> #}
+{% endblock %}

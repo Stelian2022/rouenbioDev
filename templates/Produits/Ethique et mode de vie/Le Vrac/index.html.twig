@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Ethique et mode de vie', 'link': '/produits/ethique-et-mode-de-vie' }
+] %}
+
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	{{ render(controller('App\\Controller\\SearchController::search', { 'request': app.request })) }}
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+				<p>
+					Pourquoi acheter en vrac ?
+				</p>
+
+				<p>
+					• Pour produire moins de déchets : vous pouvez apporter vos bocaux et sacs réutilisables</p>
+				<p>
+					• Pour réaliser des économies : l’emballage des produits a un prix</p>
+				<p>
+					• Pour privilégier une consommation responsable : vous achetez seulement ce que vous avez besoin, inutile d’acheter une grosse quantité d’un produit qui sera périmé avant que vous puissiez le terminer</p>
+				<p>
+					• Pour varier sa consommation d’aliments : en achetant des petites quantités, vous pourrez varier les aliments et en essayer des nouveaux sans craindre le gaspillage alimentaire</p>
+				<p>Puisque le vrac est une des solutions contre le gaspillage alimentaire et la production de déchets, notre rayon se renouvelle !
+				</p>
+				<p>Nous vous proposons des produits du quotidien mais aussi des produits uniques pour le petit-déjeuner, le goûter, le dîner ou des préparations (fruits secs, mélanges mueslis, pâtes, riz, lentilles, noix de coco rapée…).</p>
+			</div>
+		</div>
+	</div>
+	<div id="clause">
+		<p class="attention">* Veuillez contacter le magasin pour vérifier la disponibilité des produits en stock.
+		</p>
+		<p class="attention">* Le magasin se réserve le droit de modifier les prix à tout moment.
+		</p>
+	</div>
+	{{ knp_pagination_render(vrac) }}
+	<div class="card-container">
+		{% for produit in vrac %}
+			<div class="card">
+				<div class="film img">
+					<img src={{ asset('assets/img/imageProduits/LogoBiomonde.png') }} alt="{{ produit.nomProduit }}" class="img-fluid" style="max-width: 100%; max-height: 100%;">
+				</div>
+				<h2 class="card-title">{{ produit.nomProduit }}</h2>
+				<p class="card-description">{{ produit.description }}</p>
+				<p class="card-origin">Origine:
+					{{ produit.origine }}</p>
+				<p class="card-price">Prix:
+					{{ produit.prVenteTTC }}
+					€ /Kg</p>
+				<a href="{{ path('produit.detail', {'id': produit.id}) }}" class="button">Afficher</a>
+			</div>
+		{% endfor %}
+	</div>
+	{{ knp_pagination_render(vrac) }}
+{% endblock %}

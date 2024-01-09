@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Ethique et mode de vie', 'link': '/produits/ethique-et-mode-de-vie' }
+] %}
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	{{ render(controller('App\\Controller\\SearchController::search', { 'request': app.request })) }}
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+				<p>
+					Nous proposons également un large choix de produits pour nos clients intolérants au gluten.
+				</p>
+				<p>
+					Pains, brioches, biscuits, céréales, pâtes, galettes à poêler, farines, pâtes à tartiner…
+				</p>
+				<p>
+					De même que pour les produits végans, nous implantons des étiquettes « Sans gluten » dans chacun des rayons du magasin pour que vous les repériez facilement.
+				</p>
+				<p>
+					Nos marques : Schär, Valpibio, Ma Vie Sans Gluten…
+				</p>
+				<p>
+					N’hésitez pas à nous donner des idées d’implantation de nouveaux produits !
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

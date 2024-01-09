@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'À propos', 'link': '/a-propos' }
+] %}
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	<div class="presentation">
+		<div class="content">
+			<div class="textEquipe">
+				<p>Rouen Bio, un magasin d’alimentaire bio implanté depuis 25 ans au sein de Petit-Quevilly, se renouvelle !
+				</p>
+
+				<p>
+					Les nouveaux gérants depuis le 14 avril 2022 ont de grands projets en tête afin de conserver la clientèle fidèle et d’en attirer une nouvelle.</p>
+
+				<p>
+					Ils misent sur un large choix de produits dans chaque rayon, sur des prix accessibles à tous budgets et sur un engagement auprès des producteurs de la région.</p>
+
+				<p>
+					Rouen Bio évolue grâce à une équipe engagée au quotidien pour être au plus proche de vos attentes. Plus qu’un commerce de proximité, Rouen Bio est un véritable lieu de bien-être !</p>
+
+				<p>
+					Pour un renouvellement efficace, nous avons besoin de vous !</p>
+
+				<p>
+					N’hésitez pas à nous transmettre votre avis et vos recommandations en magasin ou sur notre page Google et à nous recommander auprès de vos proches.</p>
+			</div>
+		</div>
+	</div>
+	<div class="presentationEquipe">
+		<div class="team">
+			<div class="team1">
+				<img src="{{ asset('assets/img/luis-costea-rouenbio-.jpg')}}" alt="" class="centered-image">
+				<h3>LUIS</h3>
+				<p>Gérant de Rouen Bio</p>
+				<p>"Je souhaite vous transmettre des valeurs familiales, de bien-être et de vivre ensemble. Venez nous rencontrer et vous ne serez pas déçu !"</p>
+			</div>
+			<div class="team1">
+				<img src="{{ asset('assets/img/rouenbioequipe.jpg')}}" alt="" class="centered-image">
+				<p class="devise">"Une nature bienveillante, un sourire éclatant. Bienvenue dans notre oasis bio, où l'amour pour la planète se cultive avec passion."</p>
+			</div>
+
+			<div class="team1">
+				<img src="{{ asset('assets/img/loredana-costea-rouenbio.jpg')}}" alt="" class="centered-image">
+				<h3>LOREDANA</h3>
+				<p>Gérante et chargée de la partie « bien-être »</p>
+				<p>"Je souhaite vous transmettre des valeurs familiales, de bien-être et de vivre ensemble. Venez nous rencontrer et vous ne serez pas déçu !"</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Livraison ', 'link': '/livraison' }
+] %}
+
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+				<p>
+					Bientôt disponible : notre service de Click and Collect !</p>
+				<p>
+					Nous sommes ravis de vous annoncer que notre service de Click and Collect sera bientôt disponible ! Avec le Click and Collect, vous pourrez commander vos produits en ligne et venir les récupérer directement dans notre magasin, à votre convenance.</p>
+
+				<p>
+					Notre système de Click and Collect vous offre de nombreux avantages. Vous pouvez facilement parcourir notre catalogue en ligne, sélectionner les produits que vous souhaitez et passer votre commande en quelques clics. Une fois votre commande prête, vous recevrez une notification pour venir la retirer dans notre magasin.</p>
+				<p>Le Click and Collect est un moyen pratique et rapide de faire vos achats. Vous évitez les files d'attente en magasin, vous gagnez du temps et vous bénéficiez de la garantie que les produits que vous souhaitez seront disponibles à votre arrivée.</p>
+				<p>Restez à l'écoute, car nous vous informerons dès que le service de Click and Collect sera opérationnel. Nous sommes impatients de vous offrir cette nouvelle expérience d'achat pratique et personnalisée !</p>
+				<p>N'hésitez pas à nous contacter si vous avez des questions ou besoin d'informations supplémentaires. Merci de votre confiance et à bientôt pour profiter du Click and Collect !</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

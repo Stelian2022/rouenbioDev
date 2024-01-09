@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Nos Produits Bio', 'link': '/produits/nos-produits-bio' }
+] %}
+
+{% block content %}
+	<div class="newPage">
+		<h1>Produits
+			{{currentPage}}
+			Bio</h1>
+	</div>
+	{{ render(controller('App\\Controller\\SearchController::search', { 'request': app.request })) }}
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+				<p>
+					Retrouvez un large choix de produits d’hygiène chez Rouen Bio !</p>
+
+				<p>
+					Savons de toilette, gels douches, déodorants, produits d’hygiène dentaire, produits capillaires (shampooings, masques, huiles, colorations), protections menstruelles...</p>
+
+				<p>
+					Nous proposons aussi des gammes de produits solides. Pourquoi utiliser des produits solides ? Car ils sont respectueux de l’environnement, durables et fabriqués à partir de produits naturels. N’hésitez donc pas à adopter de nouvelles habitudes !</p>
+			</div>
+		</div>
+	</div>
+	<div id="clause">
+		<p class="attention">* Veuillez contacter le magasin pour vérifier la disponibilité des produits en stock.
+		</p>
+		<p class="attention">* Le magasin se réserve le droit de modifier les prix à tout moment.
+		</p>
+	</div>
+	{{ knp_pagination_render(hygiene) }}
+	<div class="card-container">
+		{% for produit in hygiene %}
+			<div class="card">
+				<div class="film img">
+					<img src={{ asset('assets/img/imageProduits/LogoBiomonde.png') }} alt="{{ produit.nomProduit }}" class="img-fluid" style="max-width: 100%; max-height: 100%;">
+				</div>
+				<h2 class="card-title">{{ produit.nomProduit }}</h2>
+				<p class="card-description">{{ produit.description }}</p>
+				<p class="card-origin">Origine:
+					{{ produit.origine }}</p>
+				<p class="card-price">Prix:
+					{{ produit.prVenteTTC }}
+					€</p>
+				<a href="{{ path('produit.detail', {'id': produit.id}) }}" class="button">Afficher</a>
+			</div>
+		{% endfor %}
+	</div>
+	{{ knp_pagination_render(hygiene) }}
+{% endblock %}

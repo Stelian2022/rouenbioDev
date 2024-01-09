@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'À propos', 'link': '/a-propos' }
+] %}
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+				<p>Depuis quelques mois, nous avons installé une toute nouvelle machine unique en Normandie qui filtre l’eau de la métropole !</p>
+				<p>Nous vous proposons une eau d’une grande qualité, idéale à boire au quotidien car elle ne contient ni pesticides, ni produits chimiques comme peut en contenir l’eau du robinet.</p>
+				<p>Le concept :</p>
+				<p>Vous achetez le contenant une première fois (bouteille en PET alimentaire réutilisable ou en verre) et vous pouvez les faire remplir ensuite pour les prix suivants :</p>
+				<p>Eau plate 1,5l — 0,45€ / eau plate 1l — 0,30€. Eau gazeuse 1l — 0,50€</p>
+				<p>Ce concept vous revient alors beaucoup moins cher que d’acheter des packs de bouteilles d’eau en plastique en supermarché puisque vous pouvez venir en magasin remplir vos bouteilles d’eau tous les jours si vous le voulez.</p>
+				<p>Un cabas qui peut contenir 6 bouteilles et quelques courses vous est également proposé.</p>
+				<p>Notre but :</p>
+				<p>Réduire les déchets ensemble</p>
+				<p>Vous proposer une eau de qualité à boire quotidiennement</p>
+			</div>
+			<div class="image">
+				<img src="{{asset('assets/img/H2O-rouen-bio.jpg') }}" alt="H2Origin">
+			</div>
+		</div>
+	</div>
+{% endblock %}

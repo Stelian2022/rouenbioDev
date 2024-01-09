@@ -1,0 +1,27 @@
+<div id="newsletterPopup" class="newsletter-popup">
+
+	<div class="newsletter-content">
+		<h2>Inscrivez-vous à notre newsletter</h2>
+		<p>Recevez les dernières actualités et promotions directement dans votre boîte de réception.</p>
+		<form action="{{ path('newsletter_subscribe') }}" method="post">
+			<input type="email" name="email" id="email" class="newsletter-input" placeholder="Votre adresse e-mail" required>
+			<button type="submit" class="btn btn-primary">S'abonner</button>
+		</form>
+		{# <div class="newsletter-close">
+			<span id="newsletter-close-icon" class="newsletter-close-icon">&times;</span>
+		</div>
+	</div> #}
+</div>
+
+{# <script>
+	// Sélection du div parent contenant le pop-up de la newsletter
+var newsletterPopup = document.getElementById('newsletterPopup');
+
+// Sélection de l'icône de fermeture
+var closeIcon = document.getElementById('newsletter-close-icon');
+
+// Ajout d'un écouteur d'événement de clic sur l'icône de fermeture
+closeIcon.addEventListener('click', function () { // Masquer le pop-up de la newsletter en ajoutant la classe "hidden"
+newsletterPopup.classList.add('hidden');
+});
+</script> #}

@@ -1,0 +1,26 @@
+#promotions div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#promotions img {
+  max-width: 500px;
+}
+/* Styles pour les écrans avec une largeur minimale de 768 pixels */
+@media (min-width: 768px) and (max-width: 801px) {
+  #promotions div {
+    padding-top: 50px;
+  }
+}
+@media (max-width: 768px) {
+  #promotions img {
+    max-width: 300px;
+  }
+  #promotions h2{
+    font-size: 1em;
+  }
+}
+

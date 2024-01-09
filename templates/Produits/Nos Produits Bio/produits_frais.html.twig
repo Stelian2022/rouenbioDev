@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Nos Produits Bio', 'link': '/produits/nos-produits-bio' }
+] %}
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}
+			Bio</h1>
+	</div>
+	{{ render(controller('App\\Controller\\SearchController::search', { 'request': app.request })) }}
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+				<p>
+					Nous vous proposons un large choix de produits au rayon frais tout en répondant à tous modes de vie!</p>
+				<p>Fromages, beurres, yaourts, desserts, boissons, viandes, poissons…</p>
+				<p>Végétariens, végans, personnes intolérantes au gluten ou au lactose, vous trouverez tous votre bonheur chez Rouen Bio !</p>
+				<p>Le produit d’exception du moment : le lait de jument de la marque Chevalait, installée à Chailloué en Normandie.</p>
+			</div>
+			<div class="image">
+				<img src="{{ asset('assets/img/frais.jpg') }}" alt="Produits frais RouenBio">
+			</div>
+		</div>
+	</div>
+	<div id="clause">
+		<p class="attention">* Veuillez contacter le magasin pour vérifier la disponibilité des produits en stock.
+		</p>
+		<p class="attention">* Le magasin se réserve le droit de modifier les prix à tout moment.
+		</p>
+	</div>
+	{{ knp_pagination_render(produitsFrais) }}
+	<div class="card-container">
+		{% for produit in produitsFrais %}
+			<div class="card">
+				<div class="film img">
+					{% if produit.imageProduit is not empty %}
+						<img src={{ asset('assets/img/imageProduits/') }} {{ produit.imageProduit }} alt="{{ produit.nomProduit }}" class="img-fluid" style="max-width: 100%; max-height: 100%;">
+					{% else %}
+						<img src="{{ asset('assets/img/imageProduits/LogoBiomonde.png') }}" alt="{{ produit.nomProduit }}" class="img-fluid" style="max-width: 100%; max-height: 100%;">
+					{% endif %}
+				</div>
+				<h2 class="card-title">{{ produit.nomProduit }}</h2>
+				<p class="card-description">{{ produit.description }}</p>
+				<p class="card-origin">Origine:
+					{{ produit.origine }}</p>
+				<p class="card-price">Prix:
+					{{ produit.prVenteTTC }}
+					€</p>
+				<a href="{{ path('produit.detail', {'id': produit.id}) }}" class="button">Afficher</a>
+			</div>
+		{% endfor %}
+	</div>
+	{{ knp_pagination_render(produitsFrais) }}
+{% endblock %}

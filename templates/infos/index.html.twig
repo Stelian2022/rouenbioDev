@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+
+] %}
+
+{% block content %}
+<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	<div
+		id="middle">
+
+		{# <div class="fb-page" data-href="https://www.facebook.com/MagasinRouenBio/" data-tabs="timeline" data-width="200" data-height="350" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+					<blockquote cite="https://www.facebook.com/MagasinRouenBio/" class="fb-xfbml-parse-ignore">
+						<a href="https://www.facebook.com/MagasinRouenBio/">Magasin Rouen Bio</a>
+					</blockquote>
+				</div> #}
+
+		<div class="fb-page"><img src="{{ asset('assets/img/hve.png') }}" alt="affiche label hve">
+
+			<br>
+			<a href="https://www.mesopinions.com/petition/politique/stop-mepris-agriculture-bio-gouvernement/202294">HVE (Haute Valeur Environnementale) n'est pas la même chose que bio-PÉTITION</a>
+		</div>
+		<div class="fb-page"><img src="{{ asset('assets/img/VISUEL RESEAUX-SOCIAUX.jpg') }}" alt="Le panier anti-inflation">
+		</div>
+
+	</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Nos Produits Bio', 'link': '/produits/nos-produits-bio' }
+] %}
+{% block content %}
+<div class="newPage">
+			<h1>Produits {{currentPage}}</h1>
+		</div>
+    {{ render(controller('App\\Controller\\SearchController::search', { 'request': app.request })) }}
+ <div id="presentation">
+		<div class="content">
+			<div class="text">
+                <p> Notre rayon bébé s’agrandit !</p>
+                <p> Venez découvrir nos nombreux nouveaux produits, notamment les pots Babybio aux nombreuses saveurs, parfaits pour que votre bébé goûte à tout !</p>
+                <p> Nos marques : Babybio, Weleda, Prémibio, Tidoo, Cattier, Melvita, Pediakid…</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+{% endblock %}

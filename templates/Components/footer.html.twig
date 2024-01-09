@@ -1,0 +1,136 @@
+{% block footer %}
+	<!-- footer section -->
+	<section id="footer">
+		<div id="store">
+			<div id="location" class="location-container">
+				<div class="google">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.545806910483!2d1.068480615909317!3d49.417494379346174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0de3cbe2b819b%3A0x7573b2af9a3aedc9!2sRouen%20BIOmonde!5e0!3m2!1sfr!2sfr!4v1676734664066!5m2!1sfr!2sfr" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+			<div class="store">
+				<h2>Notre Magasin</h2>
+				<div class="store-info">
+
+					<p>
+						<i class="fas fa-map-marker-alt"></i>
+						Adresse: 79 Bd du 11 Novembre, Le Petit Quevilly 76140</p>
+					<p>Rouen Bio/L'Art de la simplicité</p>
+				</div>
+				<div class="store-info">
+
+					<p>
+						<i class="fas fa-phone"></i>
+						02 35 73 72 70</p>
+					<button type="button" onclick="openWhatsAppPopup()">WhatsApp Chat</button>
+				</div>
+				<div class="store-info">
+
+					<a href="mailto:contact@rouenbiomonde.fr?subject=Question&body=Bonjour,%20j'ai%20une%20question%20a%20vous%20posser%20concernant%20votre%20produits.">
+						<p>
+							<i class="fas fa-envelope"></i>
+							contact@rouenbiomonde.fr</p>
+					</a>
+				</div>
+				<h2>On accepte</h2>
+				<div class="store-info">
+
+					<p>
+						<i class="far fa-credit-card"></i>
+						Carte Bancaire</p>
+				</div>
+				<div class="store-info">
+
+					<p>
+						<i class="far fa-credit-card"></i>
+						Cheque</p>
+				</div>
+				<div class="store-info">
+
+					<p>
+						<i class="far fa-credit-card"></i>
+						Espèce</p>
+				</div>
+				<div class="store-info">
+
+					<p>
+						<i class="far fa-credit-card"></i>
+						Ticket Restaurant</p>
+				</div>
+
+				<div class="social">
+					<a href="https://www.facebook.com/MagasinRouenBio/">
+						<i class="fab fa-facebook-square"></i>
+					</a>
+					<a href="https://www.instagram.com/rouen_biomonde/">
+						<i class="fab fa-instagram"></i>
+					</a>
+					<a href="https://www.youtube.com/@magasinrouenbio9380">
+						<i class="fab fa-youtube"></i>
+					</a>
+
+				</div>
+
+				<h2>A propos</h2>
+				<a href="/Categories/Equipe/">A propos</a>
+				<a href="/Plan-de-site.php">Plan de site</a>
+				<a href="#">Support</a>
+
+				<div class="map">
+					<h3>Trouver notre magasin</h3>
+					<a href="https://www.google.com/maps/place/Rouen+BIOmonde/@49.4173049,1.0706181,16.75z/data=!4m6!3m5!1s0x47e0de3cbe2b819b:0x7573b2af9a3aedc9!8m2!3d49.4176169!4d1.0705826!16s%2Fg%2F1vfp2y1w?hl=fr" target="_blank"><img src="{{ asset('assets/img/map.png') }}" alt="Location RouenBio">
+					</a>
+
+					<a href="https://www.waze.com/en/live-map/directions/rouen-bio-boulevard-du-11-novembre-79-le-petit-quevilly?navigate=yes&place=w.721390.7017294.12104988&q=45B%20Avenue%20Winston%20Churchill%2C%2027400%20Louviers" target="_blank">
+						<img src="{{ asset('assets/img/waze.png') }}" alt="Location RouenBio">
+					</a>
+					<a href="https://goo.gl/maps/bBaL1RVY23MbdJM98" target="_blank">
+						<img src="{{ asset('assets/img/plan.png') }}" alt="Location RouenBio">
+					</a>
+				</div>
+				<a href="#">Livraison</a>
+				<a href="#">Payment</a>
+				<a href="#">Fidelité</a>
+				<a href="#">Help</a>
+			</div>
+		</div>
+	</section>
+	<div class="ouverture">
+		<div>
+			<p>HEURES D'OUVERTURE</p>
+			<p>Le Lundi de 14h - 19h</p>
+			<p>Du mardi au samedi</p>
+			<p>9h30 - 12h30 et 13h30 - 19h</p>
+			<p>Fermé le dimanche</p>
+		</div>
+	</div>
+	<div class="photo">
+		<img src="{{ asset('assets/img/terrasse-rouen-bio-.jpg') }}" alt="">
+
+		<img src="{{ asset('assets/img/H2O-rouen-bio.jpg') }}" alt=""></div>
+	<div class="legale">
+		<ul>
+			<li><a href="{{path('mentions_legales')}}">Mentions Légales</a></li>
+			<li><a href="{{path('conditions_utilisation')}}">Conditions D'utilisation</a></li>
+			<li><a href="{{path('gestion_cookies')}}">Gestion de cookies</a></li>
+		</ul>
+
+	</div>
+	<div class="footer">
+		<div class="footerCont">
+			<div><p>Le Magasin RouenBio Recrute:</p>
+				<a href="{{ path('app_carriere') }}">Carrière</a>
+			</div>
+			<div>
+			<img src="{{ asset('assets/img/Logo-nobg.png') }}" alt="L'Art de la simplicité-RouenBio"></div>
+			<div><p>Partenaires:</p>
+			<p>www.cyber-web.fr</p>
+				<a href="https://cyber-web.fr" target="_blank" rel="noopener noreferrer">Besoin d'une solution web?</a>
+			</div>
+		</div>
+		<p class="creditFooter">© 2023 rouenbiomonde.fr | L'Art de la simplicité ,Powered by cyberWebRouen All rights reserved • Les images présentées sur ce site ne sont pas contractuelles.</p>
+	</div>
+
+	<!-- Fin footer section -->
+
+
+{% endblock %}

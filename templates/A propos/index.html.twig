@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Nos Produits Bio', 'link': '/produits/nos-produits-bio' }
+] %}
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	{% for label, url in apropos %}
+		<div id="submenu-cards" class="card-container">
+			<div class="card">
+				<li>
+					<a href="{{ url }}" class="cardMenu">{{ label }}</a>
+
+				</li>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}

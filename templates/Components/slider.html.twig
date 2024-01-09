@@ -1,0 +1,40 @@
+{% block script %}
+<script src="{{ asset('assets/js/slider.js') }}" defer></script>
+{% endblock %}
+<!-- slider section -->
+	<div class="motPatron">
+		<h3>
+			" Le plus ancien magasin bio de la Rive Gauche et sans doute un des premiers de la Métropole "
+		</h3>
+	</div>
+	<div class="page">
+		<div class="slider">
+			<div class="slide-ana">
+				<div style="background-image: url('{{ asset('assets/img/magasin-rouenbio.jpg') }}')">
+					<h1>Bienvenue dans votre Supermarché Bio</h1>
+					<h3>Produits de saisons</h3>
+					<a href="{{ path('accueil') }}">
+						<button>Voir plus</button>
+					</a>
+				</div>
+				<div style="background-image: url('{{ asset('assets/img/25.jpg') }}')">
+					<h1>Bienvenue dans votre Supermarché Bio</h1>
+					<h3>Promotions</h3>
+					<a href="{{ path('accueil') }}">
+						<button>Voir plus</button>
+					</a>
+				</div>
+				<div style="background-image: url('{{ asset('assets/img/26.jpg') }}')">
+					<h1>Bienvenue dans votre Supermarché Bio</h1>
+					<h3 class="ProdLoc">Producteurs locaux</h3>
+					<a href="{{ path('producteurs_locaux') }}">
+						<button id="voirPlusProducLocaux">Voir plus</button>
+					</a>
+				</div>
+			</div>
+			<span class="icon-arrow_back" id="prev"></span>
+			<span class="icon-arrow_forward" id="next"></span>
+		</div>
+	</div>
+   	<!-- fin slider section -->
+  

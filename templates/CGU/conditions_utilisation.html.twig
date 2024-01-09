@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Gestion de Cookies', 'link': '/gestion-cookies' }
+] %}
+{% block title %}Conditions d'Utilisation
+{% endblock %}
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+
+				Règle n° 1
+				<p>
+					Acceptation des conditions
+														                En accédant et en utilisant le site web rouenbiomonde.fr, vous acceptez d'être lié par les présentes conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser le site.
+				</p>
+				Règle n° 2
+				<p>
+					Propriété intellectuelle
+														                Le site web rouenbiomonde.fr et son contenu, y compris mais sans s'y limiter, les textes, les images, les graphiques, les logos et les vidéos, sont la propriété de la société "L'Art de la Simplicité" ou de ses concédants de licence et sont protégés par les lois sur la propriété intellectuelle. Vous n'êtes pas autorisé à reproduire, distribuer, modifier ou utiliser ces éléments sans l'autorisation préalable écrite de "L'Art de la Simplicité".</p>
+
+				Règle n° 3
+				<p>
+					Utilisation du site
+				</p>
+				<p>a. Vous vous engagez à utiliser le site web rouenbiomonde.fr conformément à toutes les lois applicables et aux présentes conditions d'utilisation.
+				</p>
+				<p>b. Vous ne devez pas utiliser le site d'une manière qui pourrait endommager, désactiver, surcharger ou altérer le fonctionnement du site ou compromettre la sécurité du site.</p>
+				<p>c. Vous ne devez pas collecter ou recueillir des informations personnelles ou sensibles auprès d'autres utilisateurs du site sans leur consentement.</p>
+
+				Règle n° 4
+				<p>
+					Liens externes
+														            Le site web rouenbiomonde.fr peut contenir des liens vers des sites web tiers. Ces liens sont fournis uniquement pour votre commodité. "L'Art de la Simplicité" n'exerce aucun contrôle sur le contenu de ces sites tiers et n'assume aucune responsabilité quant à leur exactitude, leur exhaustivité ou leur légalité. L'utilisation de ces liens se fait à vos propres risques.</p>
+
+				Règle n° 5
+				<p>
+					Limitation de responsabilité
+														            "L'Art de la Simplicité" ne peut être tenu responsable de tout dommage direct, indirect, spécial, accessoire ou consécutif découlant de l'utilisation ou de l'incapacité d'utiliser le site web rouenbiomonde.fr, même si "L'Art de la Simplicité" a été informé de la possibilité de tels dommages.</p>
+
+				Règle n° 6
+				<p>Modifications des conditions d'utilisation
+														            "L'Art de la Simplicité" se réserve le droit de modifier les présentes conditions d'utilisation à tout moment. Les modifications prendront effet dès leur publication sur le site web rouenbiomonde.fr. Il est de votre responsabilité de consulter régulièrement les conditions d'utilisation pour prendre connaissance des éventuelles modifications.</p>
+
+				Règle n° 7
+				<p>
+					Droit applicable et juridiction
+														            Les présentes conditions d'utilisation sont régies et interprétées conformément aux lois françaises. Tout litige découlant de l'utilisation du site web rouenbiomonde.fr sera soumis à la ompétence exclusive des tribunaux français.</p>
+
+				Règle n° 8
+				<p>
+					Dispositions générales
+														            a. Si une disposition des présentes conditions d'utilisation est jugée invalide ou inapplicable par un tribunal compétent, les autres dispositions resteront en vigueur.
+														            b. Le fait que "L'Art de la Simplicité" n'exerce pas un droit ou ne demande pas le respect d'une disposition des présentes conditions d'utilisation ne constitue pas une renonciation à ce droit ou à cette disposition.
+														            c. Les présentes conditions d'utilisation constituent l'intégralité de l'accord entre vous et "L'Art de la Simplicité" concernant l'utilisation du site web rouenbiomonde.fr.</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

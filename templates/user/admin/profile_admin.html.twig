@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Deconnexion', 'link': '/logout' }
+] %}
+
+{% block content %}
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+
+	<a href="{{ path('admin') }}" class="button">Revenir en arrière</a>
+	<table class="table">
+		<tbody>
+			<tr></tr>
+			<tr>
+				<th>Email</th>
+				<td>{{ user.email }}</td>
+			</tr>
+			<tr></tr>
+			<tr></tr>
+			<tr>
+				<th>Nom</th>
+				<td>{{ user.nom }}</td>
+			</tr>
+			<tr>
+				<th>Prenom</th>
+				<td>{{ user.prenom }}</td>
+			</tr>
+			<tr>
+				<th>Telephone</th>
+				<td>{{ user.telephone }}</td>
+			</tr>
+			<tr>
+				<th>Adresse</th>
+				<td>{{ user.adresse }}</td>
+			</tr>
+			<tr>
+				<th>Code postale</th>
+				<td>{{ user.codePostale }}</td>
+			</tr>
+			<tr>
+				<th>Ville</th>
+				<td>{{ user.ville }}</td>
+			</tr>
+			<th>Date de création</th>
+			<td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+		</tbody>
+	</tr>
+</tbody></table><a href="{{ path('app_user_edit', {'id': user.id}) }}" class="button">Modifiez votre profile</a>{% endblock %}

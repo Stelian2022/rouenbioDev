@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+     { 'label': '', 'link': '/' },
+    
+] %}
+{% block content %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/general/form.css') }}">
+	<div class="livraison">
+		<h1>{{ message }}</h1>
+		<p>
+			Aller vers la
+			<a href="{{ path('nos_produits_bio') }}">Liste de produits</a>
+		</p>
+	</div>
+{% endblock %}

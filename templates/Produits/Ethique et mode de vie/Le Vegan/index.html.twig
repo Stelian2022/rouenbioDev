@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Ethique et mode de vie', 'link': '/produits/ethique-et-mode-de-vie' }
+] %}
+
+{% block content %}>
+	<div class="newPage">
+		<h1>{{currentPage}}</h1>
+	</div>
+	{{ render(controller('App\\Controller\\SearchController::search', { 'request': app.request })) }}
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+				<p>Nous implantons des nouveaux produits en essayant de répondre à chaque mode de vie, y compris celui végan.
+				</p>
+				<p>Nous vous proposons un large choix, notamment au rayon frais avec les viandes, poulets, saucisses, pizzas, fromages ou encore yaourts végans.</p>
+				<p>Vous pourrez retrouver vos produits végans grâce à nos étiquettes « Végan » implantées dans chacun des rayons du magasin.</p>
+				<p>Nos marques : Soy, Lord of Tofu, Wheaty, Jay & Joy, Taifun, Céréalpes…</p>
+				<p>N’hésitez pas à nous donner des idées d’implantation de nouveaux produits !</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

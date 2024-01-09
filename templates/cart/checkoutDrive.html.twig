@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Click and Collect', 'link': '/cart' }
+] %}
+{% block title %}Verifier vos informations
+{% endblock %}
+{% block main %}{% endblock %}
+{% block content %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/general/form.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/styles/shopping/panier.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/styles/shopping/panierCheckout.css') }}">
+	<h1>
+		{{currentPage}}
+	</h1>
+	<div id="cardPanier">
+		{# {{ include('user/admin/_form.html.twig', {'button_label': 'Mettre à jour et valider'}) }} #}
+		{# {% include 'user/admin/_form.html.twig' with {'form': form} only %} #}
+
+
+			<form method="POST" action="{{ path('confirmationDrive') }}"> {{ form_widget(form) }}
+			<button type="submit" class="btn">Valider*</button>
+		</form>
+
+		<div class="total">
+			<h5 class="card-header bg-dark text-white">Sommaire</h5>
+			{% for item in cart.items %}
+				<div class="confirmationSum">
+					<span class="sum">
+						<b>{{ item.produit }}
+							x
+							{{ item.quantity }}...</b>
+					</span>
+				{% endfor %}
+			</div>
+			{# <div class="sousTotal">
+							<b>{{ cart.total }}
+								€</b>
+						</div> #}
+
+
+			<ul class="list-group list-group-flush">
+				<li class="list-group-total d-flex justify-content-between"></li>
+				<span class="sum">
+					<b>
+						Total TTC</b>
+					<b>{{ cart.total }}
+						€
+					</b>
+				</span>
+			</ul>
+			<div>
+				<p style="font-style: italic;"> *Le paiement de vos articles sera effectué directement en magasin lors de la récupération de vos courses.</p>
+
+			</div>
+		</div>
+
+	</div>
+
+</div>{% endblock %}

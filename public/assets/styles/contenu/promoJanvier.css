@@ -1,0 +1,22 @@
+.image {
+  width: 50%;
+}
+.presentation h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.gras {
+  font-weight: 700;
+}
+.cursive {
+  font-style: oblique;
+}
+@media (max-width: 1000px) {
+  .presentation {
+    margin: 10px;
+  }
+  .image {
+    width: 100%;
+  }
+}

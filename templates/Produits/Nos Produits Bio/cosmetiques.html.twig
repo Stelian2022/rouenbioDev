@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+    { 'label': 'Nos Produits Bio', 'link': '/produits/nos-produits-bio' }
+] %}
+{% block content %}
+<div class="newPage">
+			<h1>Produits {{currentPage}} Bio</h1>
+		</div>
+{{ render(controller('App\\Controller\\SearchController::search', { 'request': app.request })) }}
+	<div id="presentation">
+		<div class="content">
+			<div class="text">
+				<p>
+					Retrouvez un large choix de produits cosmétiques chez Rouen Bio !</p>
+				<p>
+					Crèmes de jour et de nuit, masques, huiles, produits solaires, maquillage (rouges à lèvres, blush, fards à paupières, palettes…).</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

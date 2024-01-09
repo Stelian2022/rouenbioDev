@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% set navigationItems = [
+    { 'label': 'Accueil', 'link': '/' },
+     { 'label': 'Recherche avancé', 'link': '#' } 
+] %}
+{% block content %}
+
+		<div class="newPage">
+			<h1>{{currentPage}}</h1>
+		</div>
+
+	<div class="search-form">
+		{{ form_start(form, { 'action': path('search_results') }) }}
+		{{ form_widget(form.query, {'attr': {'class': 'search-input', 'placeholder': 'Search'}}) }}
+		<button type="submit" class="search-button">
+			<i class="fas fa-search"></i>
+		</button>
+		{{ form_end(form) }}
+	</div>
+	{# {% if results.getTotalItemCount() > 0 %} #}
+		<ul>
+			{% for result in results %}
+				{# <li>{{ result.nomProduit }}</li> #}
+			{% endfor %}
+		</ul>
+
+		{# {{ knp_pagination_render(results) }} #}
+	{# {% else %}
+		<p>Aucun résultat trouvé.</p>
+	{% endif %} #}
+  
+	<div class="card-container">
+		{% if results %}
+
+			{% for result in results %}
+				<div class="card">
+					<h2 class="card-title">{{ result.nomProduit }}</h2>
+					<p class="card-description">
+						{{ result.description }}</p>
+					<p class="card-origin">Origine:
+						{{ result.origine }}</p>
+					<p class="card-price">Prix:
+						{{ result.prVenteTTC }}
+						€</p>
+					<a href="{{ path('produit.detail', {'id': result.id}) }}" class="button">Afficher</a>
+				</div>
+			{% endfor %}
+		</div>
+
+	{% endif %}
+
+
+{% endblock %}

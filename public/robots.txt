@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /api/
+Disallow: /bundles/
+Disallow: /config/
+Disallow: /src/
+Disallow: /var/
+Disallow: /vendor/
+
+Sitemap: https://www.rouenbiomonde.fr/sitemap.xml
+

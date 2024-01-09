@@ -1,0 +1,85 @@
+#cardPanier form {
+  display: flex;
+
+  align-items: normal;
+}
+#cardPanier {
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0 1rem 5rem 1rem ;
+  }
+  .list-group{
+    color: white;
+  }
+  .btn{
+    color: aliceblue;
+   
+  }
+.total{
+  margin-top: 2rem;
+}
+h1{
+  font-size: 1.5rem;
+}
+.textConfirmation{
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  margin: 1rem 1rem 5rem 1rem ;
+}
+
+.textConfirmation h2{
+  font-size: 1rem;
+}
+.text h4{
+  font-family: "courgette", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+.sum{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem 1rem 1rem;
+}
+@media (min-width: 768px) {
+  #cardPanier {
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 2rem;
+  }
+  h1{
+    font-size: 1.7rem;
+  }
+  .text h4{
+    font-family: "courgette", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .textConfirmation h1{
+    font-size: 2rem;
+  }
+  .textConfirmation h2{
+    font-size: 1.5rem;
+  }
+  .textConfirmation{
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    margin: 5rem 10rem 20rem 10rem ;
+    
+  }
+ 
+  #cardPanier {
+    display: flex;
+    flex-direction: row;
+    padding: 0 2rem 0 2rem;
+    margin: 0 5rem 10rem 5rem ;
+  }
+  .cardSum {
+    width: 100%;
+  }
+  .total {
+    width: 40%;
+  }
+  form {
+    width: 50%;
+  }
+}
